@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Abrechnungsvorschau</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th {
+            background: #f2f2f2;
+        }
+        td, th {
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Bezeichnung</th>
+            <th>Gesamt in €</th>
+            <th>Ihr Anteil</th>
+        </tr>
+        {% for item in items %}
+        <tr>
+            <td>{{ item.name }}</td>
+            <td>{{ item.total }}</td>
+            <td>{{ item.share }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

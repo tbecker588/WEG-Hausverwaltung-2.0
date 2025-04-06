@@ -1,32 +1,27 @@
 //
-//  WEG_Hausverwaltung_2_0App.swift
-//  WEG Hausverwaltung 2.0
+//  WEG_HausverwaltungApp.swift
+//  WEG Hausverwaltung
 //
 //  Created by Thomas Becker on 06.04.25.
 //
 
 import SwiftUI
-import SwiftData
 
 @main
-struct WEG_Hausverwaltung_2_0App: App {
-    var sharedModelContainer: ModelContainer = {
-        let schema = Schema([
-            Item.self,
-        ])
-        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
-
-        do {
-            return try ModelContainer(for: schema, configurations: [modelConfiguration])
-        } catch {
-            fatalError("Could not create ModelContainer: \(error)")
-        }
-    }()
-
+struct WEG_HausverwaltungApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate  // AppDelegate adaptieren
+    let persistence = CoreDataStack.shared
+    @StateObject var auth = AuthService.shared
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            DashboardView()   // Hier schaltest du zur gewünschten Start-View
+                .environment(\.managedObjectContext, persistence.context)
+                .environmentObject(auth)
+                .onAppear {
+                    UITableView.appearance().backgroundColor = .clear
+                    UICollectionView.appearance().backgroundColor = .clear
+                }
         }
-        .modelContainer(sharedModelContainer)
     }
 }
