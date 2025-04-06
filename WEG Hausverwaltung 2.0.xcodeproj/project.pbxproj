@@ -1,0 +1,580 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		521FAC7B2DA25EFA000CE34C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 521FAC612DA25EF8000CE34C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 521FAC682DA25EF8000CE34C;
+			remoteInfo = "WEG Hausverwaltung 2.0";
+		};
+		521FAC852DA25EFA000CE34C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 521FAC612DA25EF8000CE34C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 521FAC682DA25EF8000CE34C;
+			remoteInfo = "WEG Hausverwaltung 2.0";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		521FAC692DA25EF8000CE34C /* WEG Hausverwaltung 2.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WEG Hausverwaltung 2.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		521FAC7A2DA25EFA000CE34C /* WEG Hausverwaltung 2.0Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "WEG Hausverwaltung 2.0Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		521FAC842DA25EFA000CE34C /* WEG Hausverwaltung 2.0UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "WEG Hausverwaltung 2.0UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		521FAC8C2DA25EFA000CE34C /* Exceptions for "WEG Hausverwaltung 2.0" folder in "WEG Hausverwaltung 2.0" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 521FAC682DA25EF8000CE34C /* WEG Hausverwaltung 2.0 */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		521FAC6B2DA25EF8000CE34C /* WEG Hausverwaltung 2.0 */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				521FAC8C2DA25EFA000CE34C /* Exceptions for "WEG Hausverwaltung 2.0" folder in "WEG Hausverwaltung 2.0" target */,
+			);
+			path = "WEG Hausverwaltung 2.0";
+			sourceTree = "<group>";
+		};
+		521FAC7D2DA25EFA000CE34C /* WEG Hausverwaltung 2.0Tests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "WEG Hausverwaltung 2.0Tests";
+			sourceTree = "<group>";
+		};
+		521FAC872DA25EFA000CE34C /* WEG Hausverwaltung 2.0UITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "WEG Hausverwaltung 2.0UITests";
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		521FAC662DA25EF8000CE34C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		521FAC772DA25EFA000CE34C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		521FAC812DA25EFA000CE34C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		521FAC602DA25EF8000CE34C = {
+			isa = PBXGroup;
+			children = (
+				521FAC6B2DA25EF8000CE34C /* WEG Hausverwaltung 2.0 */,
+				521FAC7D2DA25EFA000CE34C /* WEG Hausverwaltung 2.0Tests */,
+				521FAC872DA25EFA000CE34C /* WEG Hausverwaltung 2.0UITests */,
+				521FAC6A2DA25EF8000CE34C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		521FAC6A2DA25EF8000CE34C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				521FAC692DA25EF8000CE34C /* WEG Hausverwaltung 2.0.app */,
+				521FAC7A2DA25EFA000CE34C /* WEG Hausverwaltung 2.0Tests.xctest */,
+				521FAC842DA25EFA000CE34C /* WEG Hausverwaltung 2.0UITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		521FAC682DA25EF8000CE34C /* WEG Hausverwaltung 2.0 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 521FAC8D2DA25EFA000CE34C /* Build configuration list for PBXNativeTarget "WEG Hausverwaltung 2.0" */;
+			buildPhases = (
+				521FAC652DA25EF8000CE34C /* Sources */,
+				521FAC662DA25EF8000CE34C /* Frameworks */,
+				521FAC672DA25EF8000CE34C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				521FAC6B2DA25EF8000CE34C /* WEG Hausverwaltung 2.0 */,
+			);
+			name = "WEG Hausverwaltung 2.0";
+			packageProductDependencies = (
+			);
+			productName = "WEG Hausverwaltung 2.0";
+			productReference = 521FAC692DA25EF8000CE34C /* WEG Hausverwaltung 2.0.app */;
+			productType = "com.apple.product-type.application";
+		};
+		521FAC792DA25EFA000CE34C /* WEG Hausverwaltung 2.0Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 521FAC922DA25EFA000CE34C /* Build configuration list for PBXNativeTarget "WEG Hausverwaltung 2.0Tests" */;
+			buildPhases = (
+				521FAC762DA25EFA000CE34C /* Sources */,
+				521FAC772DA25EFA000CE34C /* Frameworks */,
+				521FAC782DA25EFA000CE34C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				521FAC7C2DA25EFA000CE34C /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				521FAC7D2DA25EFA000CE34C /* WEG Hausverwaltung 2.0Tests */,
+			);
+			name = "WEG Hausverwaltung 2.0Tests";
+			packageProductDependencies = (
+			);
+			productName = "WEG Hausverwaltung 2.0Tests";
+			productReference = 521FAC7A2DA25EFA000CE34C /* WEG Hausverwaltung 2.0Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		521FAC832DA25EFA000CE34C /* WEG Hausverwaltung 2.0UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 521FAC952DA25EFA000CE34C /* Build configuration list for PBXNativeTarget "WEG Hausverwaltung 2.0UITests" */;
+			buildPhases = (
+				521FAC802DA25EFA000CE34C /* Sources */,
+				521FAC812DA25EFA000CE34C /* Frameworks */,
+				521FAC822DA25EFA000CE34C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				521FAC862DA25EFA000CE34C /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				521FAC872DA25EFA000CE34C /* WEG Hausverwaltung 2.0UITests */,
+			);
+			name = "WEG Hausverwaltung 2.0UITests";
+			packageProductDependencies = (
+			);
+			productName = "WEG Hausverwaltung 2.0UITests";
+			productReference = 521FAC842DA25EFA000CE34C /* WEG Hausverwaltung 2.0UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		521FAC612DA25EF8000CE34C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1630;
+				LastUpgradeCheck = 1630;
+				TargetAttributes = {
+					521FAC682DA25EF8000CE34C = {
+						CreatedOnToolsVersion = 16.3;
+					};
+					521FAC792DA25EFA000CE34C = {
+						CreatedOnToolsVersion = 16.3;
+						TestTargetID = 521FAC682DA25EF8000CE34C;
+					};
+					521FAC832DA25EFA000CE34C = {
+						CreatedOnToolsVersion = 16.3;
+						TestTargetID = 521FAC682DA25EF8000CE34C;
+					};
+				};
+			};
+			buildConfigurationList = 521FAC642DA25EF8000CE34C /* Build configuration list for PBXProject "WEG Hausverwaltung 2.0" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 521FAC602DA25EF8000CE34C;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 521FAC6A2DA25EF8000CE34C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				521FAC682DA25EF8000CE34C /* WEG Hausverwaltung 2.0 */,
+				521FAC792DA25EFA000CE34C /* WEG Hausverwaltung 2.0Tests */,
+				521FAC832DA25EFA000CE34C /* WEG Hausverwaltung 2.0UITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		521FAC672DA25EF8000CE34C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		521FAC782DA25EFA000CE34C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		521FAC822DA25EFA000CE34C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		521FAC652DA25EF8000CE34C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		521FAC762DA25EFA000CE34C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		521FAC802DA25EFA000CE34C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		521FAC7C2DA25EFA000CE34C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 521FAC682DA25EF8000CE34C /* WEG Hausverwaltung 2.0 */;
+			targetProxy = 521FAC7B2DA25EFA000CE34C /* PBXContainerItemProxy */;
+		};
+		521FAC862DA25EFA000CE34C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 521FAC682DA25EF8000CE34C /* WEG Hausverwaltung 2.0 */;
+			targetProxy = 521FAC852DA25EFA000CE34C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		521FAC8E2DA25EFA000CE34C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "WEG Hausverwaltung 2.0/WEG_Hausverwaltung_2_0.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9PDNW3B5UH;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "WEG Hausverwaltung 2.0/Info.plist";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tomssoftware2.0app.WEG-Hausverwaltung-2-0";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		521FAC8F2DA25EFA000CE34C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "WEG Hausverwaltung 2.0/WEG_Hausverwaltung_2_0.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9PDNW3B5UH;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "WEG Hausverwaltung 2.0/Info.plist";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tomssoftware2.0app.WEG-Hausverwaltung-2-0";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		521FAC902DA25EFA000CE34C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 9PDNW3B5UH;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		521FAC912DA25EFA000CE34C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 9PDNW3B5UH;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		521FAC932DA25EFA000CE34C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9PDNW3B5UH;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tomssoftware2.0app.WEG-Hausverwaltung-2-0Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WEG Hausverwaltung 2.0.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/WEG Hausverwaltung 2.0";
+			};
+			name = Debug;
+		};
+		521FAC942DA25EFA000CE34C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9PDNW3B5UH;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tomssoftware2.0app.WEG-Hausverwaltung-2-0Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WEG Hausverwaltung 2.0.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/WEG Hausverwaltung 2.0";
+			};
+			name = Release;
+		};
+		521FAC962DA25EFA000CE34C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9PDNW3B5UH;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tomssoftware2.0app.WEG-Hausverwaltung-2-0UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "WEG Hausverwaltung 2.0";
+			};
+			name = Debug;
+		};
+		521FAC972DA25EFA000CE34C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9PDNW3B5UH;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tomssoftware2.0app.WEG-Hausverwaltung-2-0UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "WEG Hausverwaltung 2.0";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		521FAC642DA25EF8000CE34C /* Build configuration list for PBXProject "WEG Hausverwaltung 2.0" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				521FAC902DA25EFA000CE34C /* Debug */,
+				521FAC912DA25EFA000CE34C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		521FAC8D2DA25EFA000CE34C /* Build configuration list for PBXNativeTarget "WEG Hausverwaltung 2.0" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				521FAC8E2DA25EFA000CE34C /* Debug */,
+				521FAC8F2DA25EFA000CE34C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		521FAC922DA25EFA000CE34C /* Build configuration list for PBXNativeTarget "WEG Hausverwaltung 2.0Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				521FAC932DA25EFA000CE34C /* Debug */,
+				521FAC942DA25EFA000CE34C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		521FAC952DA25EFA000CE34C /* Build configuration list for PBXNativeTarget "WEG Hausverwaltung 2.0UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				521FAC962DA25EFA000CE34C /* Debug */,
+				521FAC972DA25EFA000CE34C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 521FAC612DA25EF8000CE34C /* Project object */;
+}
