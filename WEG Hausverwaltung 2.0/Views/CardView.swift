@@ -1,20 +1,37 @@
 import SwiftUI
 
+/// Eine wiederverwendbare Kartenansicht mit konfigurierbarem Inhalt
 struct CardView<Content: View>: View {
+    // MARK: - Properties
     let content: Content
     
+    // MARK: - Initialization
     init(@ViewBuilder content: () -> Content) {
         self.content = content()
     }
     
+    // MARK: - Body
     var body: some View {
-        VStack(alignment: .leading) {
-            content
+        content
+            .padding(DesignSystem.Layout.Spacing.medium)
+            .background(DesignSystem.Colors.card)
+            .cornerRadius(DesignSystem.CornerRadius.medium)
+    }
+}
+
+// MARK: - Preview
+struct CardView_Previews: PreviewProvider {
+    static var previews: some View {
+        VStack {
+            CardView {
+                Text("Standard Card")
+            }
+            
+            CardView {
+                Text("Custom Card")
+            }
         }
         .padding()
-        .background(Color.cardWhite)
-        .cornerRadius(12)
-        .shadow(color: .black.opacity(0.05), radius: 8, x: 0, y: 4)
-        .padding(.horizontal)
+        .previewLayout(.sizeThatFits)
     }
 }

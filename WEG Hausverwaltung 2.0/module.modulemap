@@ -1,0 +1,4 @@
+module WEG_Hausverwaltung_2_0 {
+    header "WEG_Hausverwaltung_2_0-Bridging-Header.h"
+    export *
+}

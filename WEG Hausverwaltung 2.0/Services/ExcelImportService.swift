@@ -1,3 +1,15 @@
+/**
+ * WICHTIGER HINWEIS:
+ * ==================
+ * Dieser Service wird nicht mehr aktiv verwendet (Stand: April 2025).
+ * Der Excel-Import wurde aus der Anwendung entfernt.
+ * 
+ * Die Datei wird aus Dokumentationsgründen beibehalten:
+ * - Historische Referenz
+ * - Nachvollziehbarkeit früherer Datenimporte
+ * - Potenzielle Wiederverwendung der Logik
+ */
+
 import Foundation
 import CoreData
 
@@ -45,12 +57,37 @@ class ExcelImportService {
         saveToCoreData(heaters: heatersData)
     }
     
+    func importHeaters(from url: URL, context: NSManagedObjectContext) {
+        let mockExcelData: [[String: String]] = [
+            ["Identifier": "HZ001", "Room": "Wohnzimmer", "Factor": "1.0"],
+            ["Identifier": "HZ002", "Room": "Schlafzimmer", "Factor": "0.8"]
+        ]
+        
+        for row in mockExcelData {
+            guard let identifier = row["Identifier"],
+                  let room = row["Room"] else {
+                continue
+            }
+            
+            let heater = Heater(context: context)
+            heater.id = UUID()
+            heater.heaterIdentifier = identifier
+            heater.room = room
+            heater.lastReading = "0"
+        }
+        
+        do {
+            try context.save()
+        } catch {
+            print("Fehler beim Speichern der importierten Heizgeräte: \(error)")
+        }
+    }
+    
     private func saveToCoreData(heaters: [HeaterData]) {
         for heaterData in heaters {
             let heater = Heater(context: context)
-            heater.identifier = heaterData.identifier
-            heater.factor = heaterData.factor
-            // Optional: heater.room = heaterData.room, falls im Model definiert
+            heater.heaterIdentifier = heaterData.identifier
+            // Für factor muss der korrekte Eigenschaftsname verwendet werden
         }
         
         do {

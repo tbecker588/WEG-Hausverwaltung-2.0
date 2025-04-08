@@ -1,0 +1,61 @@
+import SwiftUI
+
+// Farben laut Passwörter-App
+/*
+extension Color {
+    static let primaryBlue = Color(red: 0.0, green: 0.5, blue: 1.0)
+    static let secondaryMint = Color(red: 0.4, green: 0.8, blue: 0.7)
+    static let secondaryGray = Color(red: 0.9, green: 0.9, blue: 0.9)
+    static let backgroundGray = Color(UIColor.systemGroupedBackground)
+    // oder andere spezielle Farben
+}
+*/
+
+extension Color {
+    static let passwordsBlue = Color(red: 0/255, green: 122/255, blue: 255/255)
+    static let passwordsGray = Color(.systemGroupedBackground)
+    static let passwordsCell = Color(.secondarySystemGroupedBackground)
+}
+
+// Button-Style, angelehnt an die Passwörter-App
+struct PasswordsButtonStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .frame(maxWidth: .infinity)
+            .padding()
+            .background(Color.passwordsBlue)
+            .foregroundColor(.white)
+            .clipShape(RoundedRectangle(cornerRadius: 10))
+            .scaleEffect(configuration.isPressed ? 0.98 : 1)
+    }
+}
+
+// MARK: - Design System
+struct DesignSystem {
+    // Entferne die Farben, die bereits in Color+Extensions.swift definiert sind
+    // static let passwordsGray = Color(...)
+    
+    // Schriftgrößen
+    struct FontSize {
+        static let small: CGFloat = 12
+        static let medium: CGFloat = 16
+        static let large: CGFloat = 20
+        static let extraLarge: CGFloat = 24
+    }
+    
+    // Abstände
+    struct Spacing {
+        static let small: CGFloat = 8
+        static let medium: CGFloat = 16
+        static let large: CGFloat = 24
+    }
+    
+    // Eckenradien
+    struct CornerRadius {
+        static let small: CGFloat = 4
+        static let medium: CGFloat = 8
+        static let large: CGFloat = 12
+    }
+    
+    // Andere Design-Konstanten...
+}

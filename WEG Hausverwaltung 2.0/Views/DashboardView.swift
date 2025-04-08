@@ -1,4 +1,5 @@
 import SwiftUI
+import CoreData
 
 // Definition eines einfachen StatusBadge, falls nicht bereits separat vorhanden.
 struct StatusBadge: View {
@@ -18,74 +19,17 @@ struct StatusBadge: View {
 
 // MARK: - DashboardView
 struct DashboardView: View {
+    @Environment(\.managedObjectContext) private var viewContext
+    
     var body: some View {
-        NavigationStack {
-            ScrollView {
-                VStack(spacing: 16) {
-                    // Begrüßung in kleinerer Schrift
-                    Text("Willkommen im Dashboard")
-                        .font(.subheadline)
-                        .foregroundColor(.secondary)
-                    
-                    // Kachel 1: Daten zur WEG
-                    TileView(
-                        title: "Daten zur WEG",
-                        systemImage: "folder.fill",
-                        backgroundColor: .blue
-                    )
-                    
-                    // Kachel 2: Eigentümer/Mieter
-                    TileView(
-                        title: "Eigentümer/Mieter",
-                        systemImage: "person.3.fill",
-                        backgroundColor: .green
-                    )
-                    
-                    // Kachel 3: Einnahmen/Ausgaben
-                    TileView(
-                        title: "Einnahmen/Ausgaben",
-                        systemImage: "banknote.fill",
-                        backgroundColor: .purple
-                    )
-                    
-                    // Kachel 4: Wohneinheiten
-                    TileView(
-                        title: "Wohneinheiten",
-                        systemImage: "house.fill",
-                        backgroundColor: .orange
-                    )
-                    
-                    // Kachel 5: Ablesungen
-                    TileView(
-                        title: "Ablesungen",
-                        systemImage: "gauge.high",
-                        backgroundColor: .red
-                    )
-                    
-                     // NavigationLink zur Einstellungen-Ansicht
-                    NavigationLink(destination: SettingsView()) {
-                        TileView(
-                            title: "Einstellungen",
-                            systemImage: "gearshape.fill",
-                            backgroundColor: .gray
-                        )
-                    }
-                }
-                    
-                    // Kachel 7: Hilfe
-                    TileView(
-                        title: "Hilfe",
-                        systemImage: "questionmark.circle.fill",
-                        backgroundColor: .yellow
-                    )
-                }
-                .padding()
-                .frame(maxWidth: .infinity)
+        NavigationView {
+            List {
+                // Dashboard-Inhalt hier
             }
-            .background(Color.passwordsGray)
-            .navigationTitle("WEG Hausverwaltung 2.0")
+            .navigationTitle("Dashboard")
         }
     }
+}
 
 // MARK: - Vorschau
 struct DashboardView_Previews: PreviewProvider {

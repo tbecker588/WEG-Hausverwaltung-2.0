@@ -7,21 +7,20 @@
 
 import SwiftUI
 
+/// Haupteinstiegspunkt der WEG Hausverwaltung App
 @main
-struct WEG_HausverwaltungApp: App {
-    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate  // AppDelegate adaptieren
-    let persistence = CoreDataStack.shared
-    @StateObject var auth = AuthService.shared
+struct WEG_Hausverwaltung_2_0App: App {
+    // MARK: - Properties
+    
+    /// Zentrale CoreData Verwaltung
+    let persistenceController = PersistenceController.shared
+    
+    // MARK: - Body
     
     var body: some Scene {
         WindowGroup {
-            DashboardView()   // Hier schaltest du zur gewünschten Start-View
-                .environment(\.managedObjectContext, persistence.context)
-                .environmentObject(auth)
-                .onAppear {
-                    UITableView.appearance().backgroundColor = .clear
-                    UICollectionView.appearance().backgroundColor = .clear
-                }
+            ContentView()
+                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
 }

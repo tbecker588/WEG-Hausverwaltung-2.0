@@ -1,11 +1,12 @@
 import Foundation
 import CoreData
+import SwiftUI
 
 class BillingService {
     let context: NSManagedObjectContext
-    var billing: Billing
+    var billing: AnnualBilling
     
-    init(context: NSManagedObjectContext, billing: Billing) {
+    init(context: NSManagedObjectContext, billing: AnnualBilling) {
         self.context = context
         self.billing = billing
     }

@@ -1,8 +1,11 @@
 import SwiftUI
+import CoreData
 
 struct MeterReadingView: View {
     @ObservedObject var heater: Heater
+    @Environment(\.managedObjectContext) private var context
     @State private var currentValue = ""
+    @Environment(\.presentationMode) var presentationMode
     
     var formattedDate: String {
         let formatter = DateFormatter()
@@ -38,13 +41,27 @@ struct MeterReadingView: View {
             }
             .listRowBackground(Color.secondaryMint.opacity(0.1))
         }
-        .navigationTitle(heater.identifier)
+        .navigationTitle(heater.heaterIdentifier ?? "Unbekannt")
         .scrollContentBackground(.hidden)
-        .background(Color.backgroundGray)
+        .background(DesignSystem.Colors.background)
     }
     
     private func saveReading() {
-        // Implementiere hier die Core Data-Speicherung
+        guard let value = Double(currentValue) else { return }
+        
+        let reading = MeterReading(context: context)
+        reading.id = UUID()
+        reading.date = Date()
+        reading.previousValue = Double(heater.lastReading) ?? 0
+        reading.currentValue = value
+        reading.heater = heater
+        
+        do {
+            try context.save()
+            presentationMode.wrappedValue.dismiss()
+        } catch {
+            print("Fehler beim Speichern: \(error)")
+        }
     }
 }
 

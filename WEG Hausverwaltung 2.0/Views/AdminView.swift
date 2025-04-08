@@ -4,7 +4,7 @@ import CoreData
 struct AdminView: View {
     @State private var password = ""
     @Environment(\.managedObjectContext) var context
-    var billing: Billing  // Annahme: Billing ist ein Core Data-Modell
+    var billing: AnnualBilling  // Korrektur: Richtige Entity verwenden
 
     var body: some View {
         VStack(spacing: 20) {
@@ -32,9 +32,8 @@ struct AdminView: View {
 
 struct AdminView_Previews: PreviewProvider {
     static var previews: some View {
-        // Da PersistenceController hier in SwiftData kein Standard ist, verwenden wir einen Dummy-Context für die Vorschau.
         let context = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
-        let billing = Billing()  // Stelle sicher, dass Billing initialisierbar ist.
+        let billing = AnnualBilling(context: context)  // Korrektur: Richtige Entity verwenden
         billing.year = 2025
         billing.isVerified = true
         return AdminView(billing: billing)

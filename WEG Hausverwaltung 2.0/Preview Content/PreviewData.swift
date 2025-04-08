@@ -1,37 +1,45 @@
 import SwiftUI
 import CoreData
+import Foundation
 
-struct PreviewData {
-    // Erstelle einen In-Memory Core Data Container für Previews
-    static let previewContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: "WEG_Hausverwaltung_2_0")
-        let description = NSPersistentStoreDescription()
-        description.type = NSInMemoryStoreType
-        container.persistentStoreDescriptions = [description]
-        container.loadPersistentStores { (_, error) in
-            if let error = error {
-                fatalError("Fehler beim Laden des In-Memory Stores: \(error)")
-            }
-        }
-        return container
-    }()
+class PreviewData {
+    static let shared = PreviewData()
     
-    static var previewContext: NSManagedObjectContext {
-        previewContainer.viewContext
-    }
+    // CoreData Kontext für Vorschauen
+    let context: NSManagedObjectContext
     
-    // Beispiel-Dummy für einen Owner
-    static var testOwner: Owner {
-        let owner = Owner(context: previewContext)
-        owner.name = "Max Mustermann"
-        owner.apartment = "WH2"
-        owner.areaSqm = 72.5
-        return owner
-    }
+    // Beispielobjekte
+    let owner: Owner
+    let heater: Heater
+    let meterReading: MeterReading
     
-    // Preview-View für OwnerListView mit Testdaten
-    static var previewOwnerListView: some View {
-        OwnerListView()
-            .environment(\.managedObjectContext, previewContext)
+    private init() {
+        context = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
+        
+        // Beispiel-Eigentümer erstellen
+        owner = Owner(context: context)
+        owner.id = UUID()
+        owner.firstName = "Max"
+        owner.lastName = "Mustermann"
+        owner.apartmentNumber = "A101"
+        owner.floorNumber = "1"
+        owner.ownershipShare = 16.67
+        owner.occupantCount = 2
+        
+        // Beispiel-Heizung erstellen
+        heater = Heater(context: context)
+        heater.id = UUID()
+        heater.heaterIdentifier = "HZ-001"
+        heater.room = "Wohnzimmer"
+        heater.lastReading = "1234"
+        heater.owner = owner
+        
+        // Beispiel-Zählerstand erstellen
+        meterReading = MeterReading(context: context)
+        meterReading.id = UUID()
+        meterReading.date = Date()
+        meterReading.previousValue = 1000.0
+        meterReading.currentValue = 1234.5
+        meterReading.heater = heater
     }
 }

@@ -4,20 +4,26 @@ import LocalAuthentication
 struct SecureActionView: View {
     @State private var authenticated = false
     @State private var message = "Nicht authentifiziert"
-
+    var onAuthenticated: () -> Void
+    
     var body: some View {
         VStack(spacing: 20) {
             Text(message)
                 .font(.headline)
+                .foregroundColor(authenticated ? DesignSystem.Colors.success : DesignSystem.Colors.text)
+            
             if !authenticated {
                 Button("Authentifizieren") {
                     authenticateUser()
                 }
+                .buttonStyle(DesignSystem.ButtonStyles.PasswordsButtonStyle())
             } else {
                 Text("Zugriff gewährt!")
+                    .foregroundColor(DesignSystem.Colors.success)
             }
         }
         .padding()
+        .background(DesignSystem.Colors.background)
     }
     
     func authenticateUser() {
@@ -31,6 +37,7 @@ struct SecureActionView: View {
                     if success {
                         authenticated = true
                         message = "Authentifizierung erfolgreich!"
+                        onAuthenticated()
                     } else {
                         authenticated = false
                         message = "Authentifizierung fehlgeschlagen: \(authError?.localizedDescription ?? "Unbekannter Fehler")"
@@ -43,8 +50,11 @@ struct SecureActionView: View {
     }
 }
 
+// Preview mit Mock-Handler
 struct SecureActionView_Previews: PreviewProvider {
     static var previews: some View {
-        SecureActionView()
+        SecureActionView {
+            print("Authentifizierung erfolgreich")
+        }
     }
 }
