@@ -1,0 +1,26 @@
+name: Auto README Update
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
+
+jobs:
+  update-readme:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Update README
+        run: |
+          DATE=$(date '+%d.%m.%Y - %H:%M Uhr')
+          echo "📝 README.md wird aktualisiert: $DATE"
+          sed -i '' "s/^## 📝 Änderungsprotokoll.*$/## 📝 Änderungsprotokoll (Letzte Aktualisierung: $DATE)/" README.md
+      
+      - name: Commit & Push
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
+          git add README.md
+          git commit -m "📝 Auto-Update: $DATE" || echo "Keine Änderungen"
+          git push
