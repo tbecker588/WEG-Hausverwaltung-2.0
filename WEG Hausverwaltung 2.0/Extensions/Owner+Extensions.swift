@@ -8,35 +8,103 @@ import CoreData
 import Foundation
 import WEG_Hausverwaltung_2_0
 
-extension WEG_Hausverwaltung_2_0.Owner {
-    // MARK: - Berechnete Eigenschaften
-
-    /// Formatierte Anzeige der Wohnungsinformationen
-    var displayAddress: String {
-        "Wohnung \(apartmentNumber ?? "-"), Etage \(floorNumber ?? "-")"
+@objc(Owner)
+public class Owner: NSManagedObject {
+    static var preview: Owner {
+        let context = PersistenceController.preview.container.viewContext
+        let owner = Owner(context: context)
+        owner.firstName = "Max"
+        owner.lastName = "Mustermann"
+        owner.street = "Musterstraße 123"
+        owner.zipCode = 12345
+        owner.city = "Musterstadt"
+        owner.ownershipShare = 16.67
+        return owner
     }
+}
 
-    // MARK: - Berechnungsmethoden
+// MARK: - Dokumentation
+/**
+ Owner Extensions
+ ===============
+ Strukturierte Erweiterungen für Owner-Entity
+ 
+ Version: 2.0
+ Stand: 09.04.2025 - 15:45 Uhr
+ 
+ ⚠️ KRITISCHE RICHTLINIEN:
+ - Keine Änderungen an Datenfeldern
+ - Keine Modifikation von Datentypen
+ - Keine Umbenennungen von Properties
+ 
+ ✓ ERLAUBTE ÄNDERUNGEN:
+ - Code-Strukturierung (MARK)
+ - Dokumentation erweitern
+ - Hilfsmethoden hinzufügen
+ */
 
-    /// Berechnet den Eigentumsanteil an einem Gesamtbetrag
-    /// - Parameter totalAmount: Der Gesamtbetrag
-    /// - Returns: Den anteiligen Betrag basierend auf ownershipShare
-    func calculatePropertyShare(of totalAmount: Double) -> Double {
+// MARK: - Formatierung & Anzeige
+extension Owner {
+    /// Formatiert Name des Eigentümers
+    var displayName: String {
+        [firstName, lastName]
+            .filter { !$0.isEmpty }
+            .joined(separator: " ")
+    }
+    
+    /// Formatiert Adresse des Eigentümers
+    var formattedAddress: String {
+        [
+            street,
+            [String(zipCode), city].joined(separator: " ")
+        ]
+        .filter { !$0.isEmpty }
+        .joined(separator: "\n")
+    }
+}
+
+// MARK: - Berechnungen
+extension Owner {
+    /// Berechnet den prozentualen Anteil eines Betrags
+    /// - Parameter amount: Gesamtbetrag
+    /// - Returns: Anteiliger Betrag basierend auf ownershipShare
+    func calculateShare(of amount: Double) -> Double {
         guard ownershipShare > 0 else { return 0 }
-        return totalAmount * (ownershipShare / 100.0)
+        return amount * (ownershipShare / 100.0)
     }
+}
 
-    // MARK: - Validierungsmethoden
-
-    /// Prüft ob alle Pflichtfelder ausgefüllt sind
+// MARK: - Validierung
+extension Owner {
+    /// Prüft Pflichtfelder auf Vollständigkeit
+    func validateRequired() -> Bool {
+        !firstName.isEmpty &&
+        !lastName.isEmpty &&
+        !street.isEmpty &&
+        !city.isEmpty &&
+        zipCode > 0
+    }
+    
+    /// Prüft die Bankdaten auf Vollständigkeit
+    /// - Returns: True wenn IBAN und BIC vorhanden sind
+    func validateBankData() -> Bool {
+        guard !iban.isEmpty,
+              !bic.isEmpty else {
+            return false
+        }
+        return true
+    }
+    
+    /// Schnelle Validierung der wichtigsten Felder
     var isValid: Bool {
         !firstName.isEmpty &&
-            !lastName.isEmpty &&
-            ownershipShare > 0
+        !lastName.isEmpty &&
+        ownershipShare > 0
     }
+}
 
-    // MARK: - Statische Hilfsmethoden
-
+// MARK: - Array Extensions
+extension Owner {
     /// Sortiert Eigentümer nach Namen (case-insensitive)
     static func sortedByName(_ owners: [Owner]) -> [Owner] {
         owners.sorted { $0.lastName.localizedCaseInsensitiveCompare($1.lastName) == .orderedAscending }
@@ -46,9 +114,11 @@ extension WEG_Hausverwaltung_2_0.Owner {
     static func filterByFloor(_ owners: [Owner], floor: String) -> [Owner] {
         owners.filter { $0.floorNumber?.lowercased() == floor.lowercased() }
     }
+}
 
-    // MARK: - Array-Zugriffsmethoden
+// MARK: - Array-Zugriffsmethoden
 
+extension Owner {
     /// Zugriff auf die Heizkörper als Array (sortiert nach Raum)
     var heatersArray: [Heater] {
         (heaters as? Set<Heater>)?
@@ -65,9 +135,49 @@ extension WEG_Hausverwaltung_2_0.Owner {
     var apartmentBillingsArray: [ApartmentBilling] {
         (apartmentBillings as? Set<ApartmentBilling>)?.sorted { $0.year > $1.year } ?? []
     }
+}
 
-    // MARK: - Beispieldaten für Vorschau
+// MARK: - Hilfsmethoden
 
+extension Owner {
+    func exportiereAlsCSV() -> String {
+        [
+            displayName,
+            formattedAddress,
+            String(format: "%.2f", totalLivingSpace),
+            String(format: "%.2f", calculateTotalPayments())
+        ].joined(separator: ";")
+    }
+    
+    func druckeZusammenfassung() {
+        print("""
+        👤 \(displayName)
+        📫 \(formattedAddress)
+        📐 Wohnfläche: \(totalLivingSpace) m²
+        💰 Zahlungen: \(calculateTotalPayments()) €
+        """)
+    }
+}
+
+// MARK: - Preview Support
+extension Owner {
+    /// Erstellt Test-Eigentümer für SwiftUI Previews
+    static var preview: Owner {
+        let context = PersistenceController.preview.container.viewContext
+        let owner = Owner(context: context)
+        owner.firstName = "Max"
+        owner.lastName = "Mustermann"
+        owner.street = "Musterstraße 123"
+        owner.zipCode = 12345
+        owner.city = "Musterstadt"
+        owner.ownershipShare = 16.67
+        return owner
+    }
+}
+
+// MARK: - Beispieldaten für Vorschau
+
+extension Owner {
     /// Beispieldaten für UI-Vorschauen
     static var examples: [Owner] {
         let context = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
