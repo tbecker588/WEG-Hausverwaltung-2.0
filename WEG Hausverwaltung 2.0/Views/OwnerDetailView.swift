@@ -1,41 +1,59 @@
-import SwiftUI
 import CoreData
+import SwiftUI
 
 // MARK: - Eigentümer Detailansicht
+
 struct OwnerDetailView: View {
-    @Environment(\.managedObjectContext) private var context
-    @Environment(\.presentationMode) var presentationMode
-    
+    @Environment(\.managedObjectContext)
+    private var context
+    @Environment(\.presentationMode)
+    var presentationMode
+
     // Für die Bearbeitung eines bestehenden Eigentümers
     var existingOwner: Owner?
-    
+
     // Persönliche Informationen
-    @State private var firstName = ""
-    @State private var lastName = ""
-    @State private var email = ""
-    @State private var phoneNumber = ""
-    
+    @State
+    private var firstName = ""
+    @State
+    private var lastName = ""
+    @State
+    private var email = ""
+    @State
+    private var phoneNumber = ""
+
     // Wohnungsinformationen
-    @State private var apartmentNumber = ""
-    @State private var floorNumber = ""
-    @State private var ownershipShare: Double = 100.0
-    
+    @State
+    private var apartmentNumber = ""
+    @State
+    private var floorNumber = ""
+    @State
+    private var ownershipShare: Double = 100.0
+
     // Kontaktinformationen
-    @State private var iban = ""
-    @State private var emergencyContactName = ""
-    @State private var emergencyContactPhone = ""
-    
+    @State
+    private var iban = ""
+    @State
+    private var emergencyContactName = ""
+    @State
+    private var emergencyContactPhone = ""
+
     // Bewohnerstatus
-    @State private var isRented = false
-    @State private var occupantCount = 1
-    
+    @State
+    private var isRented = false
+    @State
+    private var occupantCount = 1
+
     // Zusätzliche Informationen
-    @State private var garageNumber = ""
-    @State private var basementNumber = ""
-    
+    @State
+    private var garageNumber = ""
+    @State
+    private var basementNumber = ""
+
     // Alert-Status
-    @State private var showingSaveSuccessAlert = false
-    
+    @State
+    private var showingSaveSuccessAlert = false
+
     var body: some View {
         Form {
             // Persönliche Informationen
@@ -49,12 +67,12 @@ struct OwnerDetailView: View {
                 TextField("Telefonnummer", text: $phoneNumber)
                     .keyboardType(.phonePad)
             }
-            
+
             // Wohnungsinformationen
             Section(header: Text("Wohnungsinformationen")) {
                 TextField("Wohnungsnummer", text: $apartmentNumber)
                 TextField("Etage", text: $floorNumber)
-                
+
                 HStack {
                     Text("Eigentumsanteil (%)")
                     Spacer()
@@ -64,28 +82,30 @@ struct OwnerDetailView: View {
                         .frame(width: 80)
                 }
             }
-            
+
             // Bewohnerstatus
             Section(header: Text("Bewohnerstatus")) {
                 Toggle("Vermietet", isOn: $isRented)
-                
+
                 if !isRented {
-                    Stepper("Anzahl Personen: \(occupantCount)", 
-                            value: $occupantCount, 
-                            in: 1...10)
+                    Stepper(
+                        "Anzahl Personen: \(occupantCount)",
+                        value: $occupantCount,
+                        in: 1 ... 10
+                    )
                 } else {
                     NavigationLink(destination: TenantDetailView()) {
                         Text("Mieter verwalten")
                     }
                 }
             }
-            
+
             // Zusätzliche Informationen
             Section(header: Text("Zusätzliche Informationen")) {
                 TextField("Garage Nr.", text: $garageNumber)
                 TextField("Keller Nr.", text: $basementNumber)
             }
-            
+
             // Kontaktinformationen
             Section(header: Text("Bankverbindung")) {
                 TextField("IBAN", text: $iban)
@@ -93,14 +113,14 @@ struct OwnerDetailView: View {
                     .autocapitalization(.none)
                     .autocorrectionDisabled()
             }
-            
+
             // Notfallkontakt
             Section(header: Text("Notfallkontakt")) {
                 TextField("Name", text: $emergencyContactName)
                 TextField("Telefon", text: $emergencyContactPhone)
                     .keyboardType(.phonePad)
             }
-            
+
             // Speichern-Button
             Section {
                 Button(action: saveOwner) {
@@ -124,7 +144,7 @@ struct OwnerDetailView: View {
             )
         }
     }
-    
+
     // Lädt Daten eines bestehenden Eigentümers, falls verfügbar
     private func loadOwnerData() {
         if let owner = existingOwner {
@@ -144,18 +164,18 @@ struct OwnerDetailView: View {
             basementNumber = owner.basementNumber ?? ""
         }
     }
-    
+
     private func saveOwner() {
         let owner: Owner
-        
+
         // Entweder bestehenden Eigentümer aktualisieren oder neuen erstellen
-        if let existingOwner = existingOwner {
+        if let existingOwner {
             owner = existingOwner
         } else {
             owner = Owner(context: context)
             owner.id = UUID()
         }
-        
+
         // Daten aktualisieren
         owner.firstName = firstName
         owner.lastName = lastName
@@ -171,7 +191,7 @@ struct OwnerDetailView: View {
         owner.occupantCount = Int16(occupantCount)
         owner.garageNumber = garageNumber
         owner.basementNumber = basementNumber
-        
+
         do {
             try context.save()
             showingSaveSuccessAlert = true
@@ -182,6 +202,7 @@ struct OwnerDetailView: View {
 }
 
 // MARK: - Preview-Struktur
+
 struct OwnerDetailView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
@@ -193,7 +214,7 @@ struct OwnerDetailView_Previews: PreviewProvider {
             owner.lastName = "Mustermann"
             owner.apartmentNumber = "A101"
             owner.ownershipShare = 16.67
-            
+
             OwnerDetailView(existingOwner: owner)
                 .environment(\.managedObjectContext, context)
         }

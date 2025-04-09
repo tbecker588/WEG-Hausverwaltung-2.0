@@ -3,15 +3,15 @@ import CoreData
 struct PersistenceController {
     static let shared = PersistenceController()
     let container: NSPersistentContainer
-    
+
     init(inMemory: Bool = false) {
         container = NSPersistentContainer(name: "WEG_Hausverwaltung_2_0")
-        
+
         if inMemory {
             container.persistentStoreDescriptions.first?.url = URL(fileURLWithPath: "/dev/null")
         }
-        
-        container.loadPersistentStores { description, error in
+
+        container.loadPersistentStores { _, error in
             if let error = error as NSError? {
                 fatalError("CoreData Fehler: \(error.localizedDescription)")
             }

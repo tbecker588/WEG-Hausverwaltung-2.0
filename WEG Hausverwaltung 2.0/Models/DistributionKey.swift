@@ -1,5 +1,5 @@
-import Foundation
 import CoreData
+import Foundation
 
 /// Verteilungsschlüssel für Kosten
 enum DistributionKeyEnum: Codable {
@@ -8,61 +8,62 @@ enum DistributionKeyEnum: Codable {
     case perPerson(totalPersons: Int, ownerPersons: Int)
     case areaProportional
     case equalShare
-    
+
     func calculateShare(totalAmount: Double, owner: Owner, totalApartments: Int = 0) -> Double {
         switch self {
-        case .fixedTotal(let total):
-            return (1.0 / total) * totalAmount
-        
-        case .perUnit(let units):
-            return (1.0 / units) * totalAmount
-        
-        case .perPerson(let totalPersons, let ownerPersons):
-            return (Double(ownerPersons) / Double(totalPersons)) * totalAmount
-        
+        case let .fixedTotal(total):
+            (1.0 / total) * totalAmount
+
+        case let .perUnit(units):
+            (1.0 / units) * totalAmount
+
+        case let .perPerson(totalPersons, ownerPersons):
+            (Double(ownerPersons) / Double(totalPersons)) * totalAmount
+
         case .areaProportional:
-            return (owner.ownershipShare / 100.0) * totalAmount
-        
+            (owner.ownershipShare / 100.0) * totalAmount
+
         case .equalShare:
-            return totalAmount / Double(max(1, totalApartments))
+            totalAmount / Double(max(1, totalApartments))
         }
     }
-    
+
     var description: String {
         switch self {
-        case .fixedTotal(let total):
-            return "1/\(total)"
-        case .perUnit(let units):
-            return "1/\(units)"
-        case .perPerson(let totalPersons, let ownerPersons):
-            return "\(ownerPersons)/\(totalPersons)"
+        case let .fixedTotal(total):
+            "1/\(total)"
+        case let .perUnit(units):
+            "1/\(units)"
+        case let .perPerson(totalPersons, ownerPersons):
+            "\(ownerPersons)/\(totalPersons)"
         case .areaProportional:
-            return "Nach Wohnfläche"
+            "Nach Wohnfläche"
         case .equalShare:
-            return "Gleichmäßig"
+            "Gleichmäßig"
         }
     }
-    
+
     static func fromSetting(_ setting: DistributionSetting, owner: Owner) -> DistributionKeyEnum {
         switch setting.type {
         case .fixedTotal:
-            return .fixedTotal(total: setting.value)
+            .fixedTotal(total: setting.value)
         case .perUnit:
-            return .perUnit(units: setting.value)
+            .perUnit(units: setting.value)
         case .perPerson:
-            return .perPerson(
-                totalPersons: Int(exactly: setting.value) ?? 0, 
+            .perPerson(
+                totalPersons: Int(exactly: setting.value) ?? 0,
                 ownerPersons: owner.occupantCount
             )
         case .areaProportional:
-            return .areaProportional
+            .areaProportional
         case .equalShare:
-            return .equalShare
+            .equalShare
         }
     }
 }
 
 // MARK: - Beispieldaten für Tests/Preview
+
 extension DistributionKeyEnum {
     static var examples: [DistributionKeyEnum] {
         [
@@ -70,7 +71,7 @@ extension DistributionKeyEnum {
             .perUnit(units: 6),
             .perPerson(totalPersons: 10, ownerPersons: 2),
             .areaProportional,
-            .equalShare
+            .equalShare,
         ]
     }
 }
@@ -78,6 +79,6 @@ extension DistributionKeyEnum {
 struct DistributionKey: Identifiable {
     var id = UUID()
     var name: String
-    var distribution: [AppOwner: Double]  // Verwende den Typ-Alias
+    var distribution: [AppOwner: Double] // Verwende den Typ-Alias
     // weitere Eigenschaften...
 }

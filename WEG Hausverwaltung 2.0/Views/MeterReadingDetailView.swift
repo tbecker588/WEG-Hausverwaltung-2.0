@@ -2,12 +2,17 @@ import Foundation
 import SwiftUI
 
 struct MeterReadingDetailView: View {
-    @ObservedObject var heater: Heater
-    @Environment(\.managedObjectContext) private var context  // NEU: Context via Environment
-    @State private var currentValue = ""
-    @State private var showSignaturePad = false
-    @State private var isReadingSaved = false
-    
+    @ObservedObject
+    var heater: Heater
+    @Environment(\.managedObjectContext)
+    private var context // NEU: Context via Environment
+    @State
+    private var currentValue = ""
+    @State
+    private var showSignaturePad = false
+    @State
+    private var isReadingSaved = false
+
     // Formattierte Datum-Anzeige
     private var formattedDate: String {
         let formatter = DateFormatter()
@@ -15,20 +20,20 @@ struct MeterReadingDetailView: View {
         formatter.timeStyle = .short
         return formatter.string(from: Date())
     }
-    
+
     var body: some View {
         VStack {
             // Zähler-Informationsbereich
             VStack(alignment: .leading, spacing: 10) {
                 Text("Zähler: \(heater.heaterIdentifier ?? "Unbekannt")")
                     .font(.headline)
-                
+
                 HStack {
                     Text("Vorjahreswert:")
                     Text("\(heater.lastReading)")
                         .fontWeight(.bold)
                 }
-                
+
                 HStack {
                     Text("Raum:")
                     Text(heater.room)
@@ -37,13 +42,13 @@ struct MeterReadingDetailView: View {
             .padding()
             .background(Color.mint.opacity(0.2))
             .cornerRadius(10)
-            
+
             // Numpad-ähnliche Eingabe
             VStack {
                 Text("Aktueller Zählerstand")
                     .font(.subheadline)
                     .foregroundColor(.secondary)
-                
+
                 TextField("Zählerstand eingeben", text: $currentValue)
                     .keyboardType(.decimalPad)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
@@ -52,10 +57,10 @@ struct MeterReadingDetailView: View {
                     .font(.title)
             }
             .padding()
-            
+
             // Numpad-Buttons
             NumpadView(value: $currentValue)
-            
+
             // Speichern-Button
             Button(action: {
                 if !currentValue.isEmpty {
@@ -71,11 +76,10 @@ struct MeterReadingDetailView: View {
             }
             .padding()
             .disabled(currentValue.isEmpty)
-            
             // Signatur-Modal
             .sheet(isPresented: $showSignaturePad) {
                 SignatureConfirmationView(
-                    ownerName: heater.owner?.fullName ?? "Unbekannt", 
+                    ownerName: heater.owner?.fullName ?? "Unbekannt",
                     date: formattedDate,
                     meterReading: currentValue,
                     onConfirm: saveReading
@@ -85,17 +89,17 @@ struct MeterReadingDetailView: View {
         .navigationTitle("Ablesung \(heater.heaterIdentifier ?? "Unbekannt")")
         .background(DesignSystem.Colors.background)
     }
-    
+
     private func saveReading() {
         // Speichern der Ablesung in CoreData
-        let newReading = MeterReading(context: context)  // Verwendet context aus Environment
+        let newReading = MeterReading(context: context) // Verwendet context aus Environment
         newReading.heater = heater
         newReading.previousValue = Double(heater.lastReading) ?? 0
         newReading.currentValue = Double(currentValue) ?? 0
         newReading.date = Date()
-        
+
         do {
-            try context.save()  // Verwendet context aus Environment
+            try context.save() // Verwendet context aus Environment
             isReadingSaved = true
             // Optional: Benachrichtigung oder Navigation
         } catch {
@@ -106,15 +110,16 @@ struct MeterReadingDetailView: View {
 
 // Numpad-Komponente für Zählerstandeingabe
 struct NumpadView: View {
-    @Binding var value: String
-    
+    @Binding
+    var value: String
+
     let buttons = [
         ["1", "2", "3"],
         ["4", "5", "6"],
         ["7", "8", "9"],
-        ["0", ",", "⌫"]
+        ["0", ",", "⌫"],
     ]
-    
+
     var body: some View {
         VStack(spacing: 10) {
             ForEach(buttons, id: \.self) { row in
@@ -136,7 +141,7 @@ struct NumpadView: View {
         }
         .padding()
     }
-    
+
     private func handleButtonPress(_ button: String) {
         switch button {
         case "⌫":
@@ -164,16 +169,18 @@ struct SignatureConfirmationView: View {
     let date: String
     let meterReading: String
     let onConfirm: () -> Void
-    
-    @State private var signature: UIImage?
-    @Environment(\.presentationMode) var presentationMode
-    
+
+    @State
+    private var signature: UIImage?
+    @Environment(\.presentationMode)
+    var presentationMode
+
     var body: some View {
         VStack(spacing: 20) {
             Text("Ablesung bestätigen")
                 .font(.title2)
                 .fontWeight(.bold)
-            
+
             VStack(alignment: .leading, spacing: 10) {
                 Text("Name: \(ownerName)")
                 Text("Datum: \(date)")
@@ -182,21 +189,21 @@ struct SignatureConfirmationView: View {
             .padding()
             .background(Color.mint.opacity(0.2))
             .cornerRadius(10)
-            
+
             SignaturePadView { capturedSignature in
                 signature = capturedSignature
             }
             .frame(height: 200)
             .border(Color.gray.opacity(0.3), width: 1)
-            
+
             HStack {
                 Button("Abbrechen") {
                     presentationMode.wrappedValue.dismiss()
                 }
                 .foregroundColor(DesignSystem.Colors.error)
-                
+
                 Spacer()
-                
+
                 Button("Bestätigen") {
                     if signature != nil {
                         onConfirm()
@@ -209,9 +216,10 @@ struct SignatureConfirmationView: View {
             .padding()
         }
         .padding()
-        
+
         if let signature = meterReading.signature,
-           let image = UIImage(data: signature) {
+           let image = UIImage(data: signature)
+        {
             image
         }
     }

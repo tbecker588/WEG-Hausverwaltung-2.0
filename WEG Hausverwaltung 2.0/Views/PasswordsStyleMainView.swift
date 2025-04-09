@@ -1,5 +1,10 @@
 import SwiftUI
 
+enum PasswordsStyle {
+    static let blue = Color("CustomBlue")
+    static let gray = Color("CustomGray")
+}
+
 // Definiere die benötigten Design-Elemente lokal:
 extension Color {
     static let passwordsBlue = Color.blue // Oder eine benutzerdefinierte Farbe
@@ -18,8 +23,9 @@ struct PasswordsButtonStyle: ButtonStyle {
 }
 
 struct PasswordsStyleMainView: View {
-    @State private var selection = 0
-    
+    @State
+    private var selection = 0
+
     var body: some View {
         TabView(selection: $selection) {
             NavigationView {
@@ -29,7 +35,7 @@ struct PasswordsStyleMainView: View {
                 Label("Dashboard", systemImage: "house")
             }
             .tag(0)
-            
+
             NavigationView {
                 OwnerListView()
             }
@@ -37,7 +43,7 @@ struct PasswordsStyleMainView: View {
                 Label("Eigentümer", systemImage: "person.3")
             }
             .tag(1)
-            
+
             NavigationView {
                 Text("Abrechnungen")
                     .navigationTitle("Abrechnungen")
@@ -46,7 +52,7 @@ struct PasswordsStyleMainView: View {
                 Label("Abrechnungen", systemImage: "doc.text")
             }
             .tag(2)
-            
+
             NavigationView {
                 Text("Einstellungen")
                     .navigationTitle("Einstellungen")
@@ -69,7 +75,7 @@ struct DashboardView: View {
                     .fontWeight(.bold)
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.horizontal)
-                
+
                 // Statistikkarten
                 VStack(spacing: 15) {
                     StatisticsCard(title: "Eigentümer", value: "8", icon: "person.3.fill", color: .blue)
@@ -89,7 +95,7 @@ struct StatisticsCard: View {
     var value: String
     var icon: String
     var color: Color
-    
+
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
@@ -112,15 +118,18 @@ struct StatisticsCard: View {
 }
 
 struct OwnerListView: View {
-    @Environment(\.managedObjectContext) private var viewContext
-    
+    @Environment(\.managedObjectContext)
+    private var viewContext
+
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Owner.lastName, ascending: true)],
-        animation: .default)
+        animation: .default
+    )
     private var owners: FetchedResults<Owner>
-    
-    @State private var searchText = ""
-    
+
+    @State
+    private var searchText = ""
+
     var body: some View {
         List {
             ForEach(owners, id: \.id) { owner in

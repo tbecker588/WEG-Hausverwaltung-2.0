@@ -1,28 +1,39 @@
-import SwiftUI
 import CoreData
+import SwiftUI
 
 struct AnnualBillingInputView: View {
-    @Environment(\.managedObjectContext) private var context
-    @Environment(\.presentationMode) var presentationMode
-    
-    @State private var year: Int = Calendar.current.component(.year, from: Date())
-    
+    @Environment(\.managedObjectContext)
+    private var context
+    @Environment(\.presentationMode)
+    var presentationMode
+
+    @State
+    private var year: Int = Calendar.current.component(.year, from: Date())
+
     // Wasserzähler-Daten
-    @State private var waterTotalConsumption = ""
-    @State private var waterTotalCost = ""
-    @State private var waterPricePerCubicMeter = ""
-    
+    @State
+    private var waterTotalConsumption = ""
+    @State
+    private var waterTotalCost = ""
+    @State
+    private var waterPricePerCubicMeter = ""
+
     // Gaszähler-Daten
-    @State private var gasTotalConsumption = ""
-    @State private var gasTotalCost = ""
-    @State private var gasPricePerKWh = ""
-    
+    @State
+    private var gasTotalConsumption = ""
+    @State
+    private var gasTotalCost = ""
+    @State
+    private var gasPricePerKWh = ""
+
     // Heizungsverbrauch
-    @State private var heatingTotalConsumption = ""
-    
+    @State
+    private var heatingTotalConsumption = ""
+
     // Alert-Status
-    @State private var showingSaveSuccessAlert = false
-    
+    @State
+    private var showingSaveSuccessAlert = false
+
     var body: some View {
         VStack {
             // Benutzerdefinierte Navigationsleiste
@@ -35,27 +46,27 @@ struct AnnualBillingInputView: View {
                         Text("Zurück")
                     }
                 }
-                
+
                 Spacer()
-                
+
                 Text("Jahresabrechnung")
                     .font(.headline)
-                
+
                 Spacer()
             }
             .padding()
             .background(Color.gray.opacity(0.1))
-            
+
             Form {
                 // Jahr-Auswahl
                 Section(header: Text("Abrechnungsjahr")) {
                     Picker("Jahr", selection: $year) {
-                        ForEach((2020...2030), id: \.self) { selectedYear in
+                        ForEach(2020 ... 2030, id: \.self) { selectedYear in
                             Text(String(selectedYear)).tag(selectedYear)
                         }
                     }
                 }
-                
+
                 // Wasserzähler-Sektion
                 Section(header: Text("Wasserzähler")) {
                     HStack {
@@ -66,7 +77,7 @@ struct AnnualBillingInputView: View {
                                 .foregroundColor(waterTotalConsumption.isEmpty ? .gray : .primary)
                         }
                     }
-                    
+
                     HStack {
                         Text("Gesamtkosten (€)")
                         Spacer()
@@ -75,7 +86,7 @@ struct AnnualBillingInputView: View {
                                 .foregroundColor(waterTotalCost.isEmpty ? .gray : .primary)
                         }
                     }
-                    
+
                     HStack {
                         Text("Preis pro m³ (€)")
                         Spacer()
@@ -85,7 +96,7 @@ struct AnnualBillingInputView: View {
                         }
                     }
                 }
-                
+
                 // Gaszähler-Sektion
                 Section(header: Text("Gaszähler")) {
                     HStack {
@@ -96,7 +107,7 @@ struct AnnualBillingInputView: View {
                                 .foregroundColor(gasTotalConsumption.isEmpty ? .gray : .primary)
                         }
                     }
-                    
+
                     HStack {
                         Text("Gesamtkosten (€)")
                         Spacer()
@@ -105,7 +116,7 @@ struct AnnualBillingInputView: View {
                                 .foregroundColor(gasTotalCost.isEmpty ? .gray : .primary)
                         }
                     }
-                    
+
                     HStack {
                         Text("Preis pro kWh (€)")
                         Spacer()
@@ -115,7 +126,7 @@ struct AnnualBillingInputView: View {
                         }
                     }
                 }
-                
+
                 // Heizungsverbrauch-Sektion
                 Section(header: Text("Heizung")) {
                     HStack {
@@ -127,7 +138,7 @@ struct AnnualBillingInputView: View {
                         }
                     }
                 }
-                
+
                 // Speichern-Button
                 Section {
                     Button(action: saveAnnualBilling) {
@@ -154,11 +165,11 @@ struct AnnualBillingInputView: View {
                     }
                 }
                 .padding()
-                
+
                 Divider()
-                
+
                 UniversalNumpad(
-                    value: $currentNumpadValue, 
+                    value: $currentNumpadValue,
                     onConfirm: confirmNumpadEntry
                 )
             }
@@ -176,15 +187,18 @@ struct AnnualBillingInputView: View {
             )
         }
     }
-    
+
     // Numpad-Modal-Steuerung
-    @State private var showNumpadModal = false
-    @State private var currentNumpadValue = ""
-    @State private var currentField = ""
-    
+    @State
+    private var showNumpadModal = false
+    @State
+    private var currentNumpadValue = ""
+    @State
+    private var currentField = ""
+
     private func showNumpad(for field: String) {
         currentField = field
-        
+
         // Aktuellen Wert vorbelegen
         switch field {
         case "waterConsumption": currentNumpadValue = waterTotalConsumption
@@ -196,23 +210,23 @@ struct AnnualBillingInputView: View {
         case "heatingConsumption": currentNumpadValue = heatingTotalConsumption
         default: currentNumpadValue = ""
         }
-        
+
         showNumpadModal = true
     }
-    
+
     private func numpadTitleForField() -> String {
         switch currentField {
-        case "waterConsumption": return "Wasserverbrauch eingeben"
-        case "waterCost": return "Wasserkosten eingeben"
-        case "waterPrice": return "Wasserpreis pro m³ eingeben"
-        case "gasConsumption": return "Gasverbrauch eingeben"
-        case "gasCost": return "Gaskosten eingeben"
-        case "gasPrice": return "Gaspreis pro kWh eingeben"
-        case "heatingConsumption": return "Heizungsverbrauch eingeben"
-        default: return "Wert eingeben"
+        case "waterConsumption": "Wasserverbrauch eingeben"
+        case "waterCost": "Wasserkosten eingeben"
+        case "waterPrice": "Wasserpreis pro m³ eingeben"
+        case "gasConsumption": "Gasverbrauch eingeben"
+        case "gasCost": "Gaskosten eingeben"
+        case "gasPrice": "Gaspreis pro kWh eingeben"
+        case "heatingConsumption": "Heizungsverbrauch eingeben"
+        default: "Wert eingeben"
         }
     }
-    
+
     private func confirmNumpadEntry() {
         switch currentField {
         case "waterConsumption": waterTotalConsumption = currentNumpadValue
@@ -224,51 +238,53 @@ struct AnnualBillingInputView: View {
         case "heatingConsumption": heatingTotalConsumption = currentNumpadValue
         default: break
         }
-        
+
         showNumpadModal = false
     }
-    
+
     // Validierung der Eingaben
     private func isFormValid() -> Bool {
-        return !waterTotalConsumption.isEmpty &&
-               !waterTotalCost.isEmpty &&
-               !waterPricePerCubicMeter.isEmpty &&
-               !gasTotalConsumption.isEmpty &&
-               !gasTotalCost.isEmpty &&
-               !gasPricePerKWh.isEmpty &&
-               !heatingTotalConsumption.isEmpty
+        !waterTotalConsumption.isEmpty &&
+            !waterTotalCost.isEmpty &&
+            !waterPricePerCubicMeter.isEmpty &&
+            !gasTotalConsumption.isEmpty &&
+            !gasTotalCost.isEmpty &&
+            !gasPricePerKWh.isEmpty &&
+            !heatingTotalConsumption.isEmpty
     }
-    
+
     // Speichern der Jahresabrechnung
     private func saveAnnualBilling() {
         let newBilling = AnnualBilling(context: context)
         newBilling.id = UUID()
-        
+
         // Wasserdaten
         newBilling.year = Int16(year)
         newBilling.totalWaterConsumption = Double(waterTotalConsumption.replacingOccurrences(of: ",", with: ".")) ?? 0
         newBilling.totalWaterCost = Double(waterTotalCost.replacingOccurrences(of: ",", with: ".")) ?? 0
-        newBilling.waterCostPerCubicMeter = Double(waterPricePerCubicMeter.replacingOccurrences(of: ",", with: ".")) ?? 0
-        
+        newBilling
+            .waterCostPerCubicMeter = Double(waterPricePerCubicMeter.replacingOccurrences(of: ",", with: ".")) ?? 0
+
         // Gasdaten
         newBilling.totalGasConsumption = Double(gasTotalConsumption.replacingOccurrences(of: ",", with: ".")) ?? 0
         newBilling.totalGasCost = Double(gasTotalCost.replacingOccurrences(of: ",", with: ".")) ?? 0
         newBilling.gasCostPerKWh = Double(gasPricePerKWh.replacingOccurrences(of: ",", with: ".")) ?? 0
-        
+
         // Heizungsverbrauch
-        newBilling.totalHeatingConsumption = Double(heatingTotalConsumption.replacingOccurrences(of: ",", with: ".")) ?? 0
-        
+        newBilling
+            .totalHeatingConsumption = Double(heatingTotalConsumption.replacingOccurrences(of: ",", with: ".")) ?? 0
+
         // Zusätzliche Metadaten
         newBilling.creationDate = Date()
         newBilling.isFinalized = false
-        
+
         do {
             // Berechnung der Jahresabrechnung
             try BillingCalculationService.shared.calculateAnnualBilling(billing: newBilling, context: context)
-            
+
             // Speichern
             try context.save()
-            
+
             // Erfolgsmeldung zeigen
             showingSaveSuccessAlert = true
         } catch {

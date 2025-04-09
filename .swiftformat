@@ -1,0 +1,15 @@
+--swiftversion 5.9
+--indent 4
+--linebreaks lf
+--header strip
+--self remove
+--importgrouping alphabetized
+--trimwhitespace always
+--maxwidth 120
+--wraparguments before-first
+--wrapcollections before-first
+--wrapparameters before-first
+--funcattributes prev-line
+--typeattributes prev-line
+--storedvarattrs prev-line
+--computedvarattrs prev-line

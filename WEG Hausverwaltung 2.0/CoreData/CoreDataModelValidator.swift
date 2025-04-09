@@ -1,10 +1,23 @@
 import Foundation
 import CoreData
 
-/// Überprüft das CoreData-Modell auf Vollständigkeit und Korrektheit.
-class CoreDataModelValidator {
-    /// Überprüft, ob alle erforderlichen Entitäten und Attribute vorhanden sind.
-    static func validateModel() {
+protocol CoreDataModelValidating {
+    func validateModel()
+}
+
+class CoreDataModelValidator: CoreDataModelValidating {
+    /// Überprüft das CoreData-Modell auf Vollständigkeit und Korrektheit.
+    func validateModel() {
+        // Teil 1 der Validierung
+        validateBasicProperties()
+        
+        // Teil 2 der Validierung
+        validateRelationships()
+        
+        print("✅ CoreData-Modellvalidierung abgeschlossen.")
+    }
+    
+    private static func validateBasicProperties() {
         guard let modelURL = Bundle.main.url(forResource: "WEG_Hausverwaltung_2_0", withExtension: "momd"),
               let model = NSManagedObjectModel(contentsOf: modelURL) else {
             print("⚠️ Warnung: CoreData-Modell konnte nicht geladen werden!")
@@ -41,42 +54,51 @@ class CoreDataModelValidator {
                       "endDate"]
         ]
         
+        validateEntitiesAndAttributes(model: model, expectedEntities: expectedEntities)
+        validateAttributeTypes(model: model)
+    }
+    
+    private static func validateRelationships() {
+        guard let modelURL = Bundle.main.url(forResource: "WEG_Hausverwaltung_2_0", withExtension: "momd"),
+              let model = NSManagedObjectModel(contentsOf: modelURL) else {
+            print("⚠️ Warnung: CoreData-Modell konnte nicht geladen werden!")
+            return
+        }
+        
         // Erwartete Beziehungen
-        let expectedRelationships: [String: [(name: String, destination: String, toMany: Bool)]] = [
+        let expectedRelationships: [String: [RelationshipConfig]] = [
             "Owner": [
-                ("apartmentBillings", "ApartmentBilling", true),
-                ("heaters", "Heater", true),
-                ("tenants", "Tenant", true)
+                RelationshipConfig(name: "apartmentBillings", destination: "ApartmentBilling", isMultiple: true),
+                RelationshipConfig(name: "heaters", destination: "Heater", isMultiple: true),
+                RelationshipConfig(name: "tenants", destination: "Tenant", isMultiple: true)
             ],
             "Heater": [
-                ("owner", "Owner", false),
-                ("meterReadings", "MeterReading", true)
+                RelationshipConfig(name: "owner", destination: "Owner", isMultiple: false),
+                RelationshipConfig(name: "meterReadings", destination: "MeterReading", isMultiple: true)
             ],
             "MeterReading": [
-                ("heater", "Heater", false)
+                RelationshipConfig(name: "heater", destination: "Heater", isMultiple: false)
             ],
             "AnnualBilling": [
-                ("apartmentBillings", "ApartmentBilling", true)
+                RelationshipConfig(name: "apartmentBillings", destination: "ApartmentBilling", isMultiple: true)
             ],
             "ApartmentBilling": [
-                ("owner", "Owner", false),
-                ("annualBilling", "AnnualBilling", false)
+                RelationshipConfig(name: "owner", destination: "Owner", isMultiple: false),
+                RelationshipConfig(name: "annualBilling", destination: "AnnualBilling", isMultiple: false)
             ],
             "Tenant": [
-                ("owner", "Owner", false)
+                RelationshipConfig(name: "owner", destination: "Owner", isMultiple: false)
             ]
         ]
         
-        validateEntitiesAndAttributes(model: model, expectedEntities: expectedEntities)
         validateRelationships(model: model, expectedRelationships: expectedRelationships)
-        validateAttributeTypes(model: model)
         validateDetailedRelationships(model: model)
-        
-        print("✅ CoreData-Modellvalidierung abgeschlossen.")
     }
     
-    private static func validateEntitiesAndAttributes(model: NSManagedObjectModel, 
-                                                    expectedEntities: [String: Set<String>]) {
+    private static func validateEntitiesAndAttributes(
+        model: NSManagedObjectModel, 
+        expectedEntities: [String: Set<String>]
+    ) {
         for (entityName, expectedAttributes) in expectedEntities {
             guard let entity = model.entitiesByName[entityName] else {
                 print("⚠️ Warnung: Entität \(entityName) fehlt im Modell!")
@@ -97,8 +119,10 @@ class CoreDataModelValidator {
         }
     }
     
-    private static func validateRelationships(model: NSManagedObjectModel, 
-                                           expectedRelationships: [String: [(name: String, destination: String, toMany: Bool)]]) {
+    private static func validateRelationships(
+        model: NSManagedObjectModel, 
+        expectedRelationships: [String: [RelationshipConfig]]
+    ) {
         for (entityName, relationships) in expectedRelationships {
             guard let entity = model.entitiesByName[entityName] else {
                 continue
@@ -107,7 +131,7 @@ class CoreDataModelValidator {
             for relationship in relationships {
                 let relationshipName = relationship.name
                 let destinationName = relationship.destination
-                let isToMany = relationship.toMany
+                let isToMany = relationship.isMultiple
                 
                 guard let rel = entity.relationshipsByName[relationshipName] else {
                     print("⚠️ Warnung: Beziehung \(relationshipName) fehlt bei \(entityName)!")
@@ -158,7 +182,7 @@ class CoreDataModelValidator {
                 "type": .stringAttributeType,                   // Typ des Heizkörpers
                 "installationDate": .dateAttributeType,         // Installationsdatum
                 "factorValue": .doubleAttributeType            // Bewertungsfaktor
-            ],
+            ]
             // ... weitere Entitäten hier
         ]
         
@@ -178,99 +202,76 @@ class CoreDataModelValidator {
             }
         }
     }
-    
-    private static func validateDetailedRelationships(model: NSManagedObjectModel) {
-        let relationshipDetails: [String: [RelationshipDetail]] = [
-            "Owner": [
-                RelationshipDetail(name: "apartmentBillings", 
-                                 destinationEntity: "ApartmentBilling",
-                                 inverse: "owner",
-                                 isOptional: true,
-                                 isToMany: true,
-                                 deleteRule: .cascadeDeleteRule),
-                RelationshipDetail(name: "heaters",
-                                 destinationEntity: "Heater",
-                                 inverse: "owner",
-                                 isOptional: true,
-                                 isToMany: true,
-                                 deleteRule: .nullifyDeleteRule),
-                RelationshipDetail(name: "tenants",
-                                 destinationEntity: "Tenant",
-                                 inverse: "owner",
-                                 isOptional: true,
-                                 isToMany: true,
-                                 deleteRule: .cascadeDeleteRule)
-            ],
-            "Heater": [
-                RelationshipDetail(name: "owner",
-                                 destinationEntity: "Owner",
-                                 inverse: "heaters",
-                                 isOptional: false,
-                                 isToMany: false,
-                                 deleteRule: .nullifyDeleteRule),
-                RelationshipDetail(name: "meterReadings",
-                                 destinationEntity: "MeterReading",
-                                 inverse: "heater",
-                                 isOptional: true,
-                                 isToMany: true,
-                                 deleteRule: .cascadeDeleteRule)
-            ]
-            // Weitere Entitäten hier...
-        ]
-        
-        for (entityName, details) in relationshipDetails {
-            guard let entity = model.entitiesByName[entityName] else {
-                print("⚠️ Entität \(entityName) nicht gefunden!")
-                continue
-            }
-            
-            for detail in details {
-                guard let relationship = entity.relationshipsByName[detail.name] else {
-                    print("⚠️ Beziehung \(detail.name) in \(entityName) nicht gefunden!")
-                    continue
-                }
-                
-                validateRelationshipDetail(entityName: entityName, 
-                                        relationship: relationship, 
-                                        expected: detail)
-            }
-        }
-    }
-    
-    private static func validateRelationshipDetail(entityName: String, 
-                                                 relationship: NSRelationshipDescription, 
-                                                 expected: RelationshipDetail) {
-        if relationship.destinationEntity?.name != expected.destinationEntity {
-            print("⚠️ \(entityName).\(expected.name): Falsches Ziel - Ist: \(relationship.destinationEntity?.name ?? "nil"), Soll: \(expected.destinationEntity)")
-        }
-        
-        if let inverse = relationship.inverseRelationship {
-            if inverse.name != expected.inverse {
-                print("⚠️ \(entityName).\(expected.name): Falsche Inverse - Ist: \(inverse.name), Soll: \(expected.inverse)")
-            }
-        } else {
-            print("⚠️ \(entityName).\(expected.name): Keine inverse Beziehung definiert!")
-        }
-        
-        if relationship.isOptional != expected.isOptional {
-            print("⚠️ \(entityName).\(expected.name): Falsche Optionalität - Ist: \(relationship.isOptional), Soll: \(expected.isOptional)")
-        }
-        
-        if relationship.isToMany != expected.isToMany {
-            print("⚠️ \(entityName).\(expected.name): Falsche Kardinalität - Ist: \(relationship.isToMany ? "To-Many" : "To-One"), Soll: \(expected.isToMany ? "To-Many" : "To-One")")
-        }
-        
-        if relationship.deleteRule != expected.deleteRule {
-            print("⚠️ \(entityName).\(expected.name): Falsche Löschregel - Ist: \(relationship.deleteRule), Soll: \(expected.deleteRule)")
-        }
-    }
+}
 
-    private struct RelationshipDetail {
-        let name: String
-        let destinationEntity: String
-        let inverse: String
-        let isOptional: Bool
-        let isToMany: Bool
-        let deleteRule: NSDeleteRule
+extension CoreDataModelValidator {
+    private func validateDetailedRelationships(model: NSManagedObjectModel) {
+        validateRelationshipTypes(model)
+        validateRelationshipRules(model)
     }
+}
+
+private static func validateRelationshipDetail(
+    entityName: String,
+    relationship: NSRelationshipDescription,
+    expected: RelationshipDetail
+) {
+    if relationship.destinationEntity?.name != expected.destinationEntity {
+        print("⚠️ \(entityName).\(expected.name): Falsches Ziel - Ist: \(relationship.destinationEntity?.name ?? "nil"), Soll: \(expected.destinationEntity)")
+    }
+    
+    if let inverse = relationship.inverseRelationship {
+        if inverse.name != expected.inverse {
+            print("⚠️ \(entityName).\(expected.name): Falsche Inverse - Ist: \(inverse.name), Soll: \(expected.inverse)")
+        }
+    } else {
+        print("⚠️ \(entityName).\(expected.name): Keine inverse Beziehung definiert!")
+    }
+    
+    if relationship.isOptional != expected.isOptional {
+        print("⚠️ \(entityName).\(expected.name): Falsche Optionalität - Ist: \(relationship.isOptional), Soll: \(expected.isOptional)")
+    }
+    
+    if relationship.isToMany != expected.isToMany {
+        print("⚠️ \(entityName).\(expected.name): Falsche Kardinalität - Ist: \(relationship.isToMany ? "To-Many" : "To-One"), Soll: \(expected.isToMany ? "To-Many" : "To-One")")
+    }
+    
+    if relationship.deleteRule != expected.deleteRule {
+        print("⚠️ \(entityName).\(expected.name): Falsche Löschregel - Ist: \(relationship.deleteRule), Soll: \(expected.deleteRule)")
+    }
+}
+
+private struct RelationshipDetail {
+    let name: String
+    let destinationEntity: String
+    let inverse: String
+    let isOptional: Bool
+    let isToMany: Bool
+    let deleteRule: NSDeleteRule
+}
+
+struct RelationshipConfig {
+    let name: String
+    let destination: String
+    let isMultiple: Bool
+}
+
+struct ValidationResult {
+    let isValid: Bool
+    let errorMessage: String
+    let details: [String]
+}
+
+private let validProperties = [
+    "id",
+    "name",
+    "value"
+]
+
+func validateEntity(
+    name: String,
+    properties: [String],
+    relationships: [String]
+) -> ValidationResult {
+    // ...existing code...
 }

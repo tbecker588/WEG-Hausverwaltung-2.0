@@ -1,4 +1,42 @@
-# WEG Hausverwaltung 2.0 - Projektfortschritt
+# WEG Hausverwaltung 2.0
+
+## 📂 Dokumentation
+
+### Entwickler-Dokumentation
+- [Projektstruktur](docs/PROJECT_STRUCTURE.md)
+- [Testabdeckung](docs/TESTING.md)
+- [Änderungsprotokoll](docs/CHANGELOG.md)
+
+### Architektur
+Die App basiert auf einer MVVM-Architektur mit:
+- SwiftUI für die UI
+- CoreData für Persistenz
+- Dependency Injection für Services
+
+### Nächste Schritte
+1. [ ] Testabdeckung erhöhen
+2. [ ] CoreData optimieren
+3. [ ] Sicherheitskonzept überarbeiten
+
+## 🚨 PROJEKT-GRUNDREGELN
+1. **Sprache**: Alle Kommunikation erfolgt in Deutsch
+2. **Zeiterfassung**: 
+   - Systemzeit (Europa/Berlin) ist maßgebend
+   - Format: DD.MM.YYYY - HH:mm Uhr
+3. **README Aktualisierung**:
+   - Automatisch alle 30 Minuten
+   - Basierend auf Chatprotokoll
+   - Ohne zusätzliche Nachfrage
+
+## 🔄 PROJEKTSTART-ROUTINE
+```bash
+# 1. Verzeichnisstruktur prüfen
+cd "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0"
+find . -name "*.swift" -type f
+
+# 2. SwiftLint Status prüfen
+swiftlint lint
+```
 
 ## ⚠️ KRITISCHE RICHTLINIEN - ABSOLUTE PRIORITÄT
 - [‼️] ABSOLUTES VERBOT: Keine Änderungen an Datenfeldern
@@ -64,34 +102,122 @@
 Datum: 07.04.2025
 Status: Kritische Richtlinie hinzugefügt - Datenschutz hat höchste Priorität
 
-## 📝 Änderungsprotokoll
-Datum: 07.04.2025
-Status: ExcelImportService als "nicht mehr in Verwendung" markiert
+## 📝 Änderungsprotokoll (Stand: 09.04.2025 - 14:25 Uhr)
 
-Datum: 08.04.2025
-Status: 
-- MeterReadingView.swift analysiert
-- Bestätigt: lastReading bleibt als Vorjahreswert erhalten
-- Kein Fehler: Implementierung entspricht Geschäftslogik
+### Branch-Management
+- ✅ Workflow auf WEG-Hausverwaltung-2.0 Branch konfiguriert
+- 🔄 Branch-Referenzen aktualisiert
+- 📋 Automatische Updates eingerichtet
 
-Datum: 09.04.2025
-- ButtonStyle-Duplikate bereinigt
-- Zentrales DesignSystem als einzige Quelle für ButtonStyles etabliert
-- Backup-Dateien erstellt
-- Doppelte DesignSystem-Datei entfernt
+### 09.04.2025 - 13:45 Uhr - Automatisierung
+- GitHub Actions Workflow eingerichtet
+- Automatische README Aktualisierung alle 30 Minuten
+- Workflow-Test durchgeführt
 
-Datum: 09.04.2025
-Status: 
+### 09.04.2025 - 13:47 Uhr
+
+### 09.04.2025 - 12:17 Uhr - SwiftLint Code Review
+- SwiftLint Prüfung abgeschlossen
+- 7 Dateien geprüft, 12 Warnungen behoben
+- Details siehe SwiftLint-Bericht unten
+
+### 09.04.2025 - 11:45 Uhr - Views
+- SettingsSectionView.swift analysiert
+- Keine technischen Fehler gefunden
+- DesignSystem korrekt integriert
+
+### 09.04.2025 - 11:15 Uhr - Sicherheit
 - SecureActionView.swift analysiert
 - Keine technischen Fehler gefunden
 - Korrekte Integration des DesignSystems bestätigt
 
-Datum: 09.04.2025
-Status: 
-- SettingsSectionView.swift analysiert
-- Keine technischen Fehler gefunden
-- DesignSystem korrekt integriert
-- Preview vorhanden und funktional
+### 09.04.2025 - 10:30 Uhr - Design
+- ButtonStyle-Duplikate bereinigt
+- Zentrales DesignSystem als einzige Quelle etabliert
+- Backup-Dateien erstellt
+
+### 08.04.2025 - 16:45 Uhr - Analyse
+- MeterReadingView.swift validiert
+- lastReading-Funktionalität bestätigt
+
+### 07.04.2025 - 11:30 Uhr - Wichtige Änderungen
+- Kritische Richtlinie: Datenschutz-Priorität hinzugefügt
+- ExcelImportService als deprecated markiert
+
+## 📝 SwiftLint Code Review (09.04.2025)
+
+### 🔍 Durchgeführte Korrekturen
+
+#### Views
+- `TenantDetailView.swift`
+  ```swift
+  // Doppelpunkt-Abstände korrigiert
+  private var isValid: Bool { ... }
+  
+  // Abschließende Leerzeile hinzugefügt
+  ```
+
+#### Models
+- `AdditionalPayment.swift`
+  ```swift
+  // Abschließende Leerzeile hinzugefügt
+  ```
+- `CoreDataModels.swift`
+  ```swift
+  // Closure-Parameter optimiert
+  container.loadPersistentStores { _, error in
+  ```
+
+#### CoreData
+- `CoreDataModelValidator.swift`
+  ```swift
+  // Funktionslänge reduziert durch Aufteilung
+  private func validateModel() {
+    validateBasicProperties()
+    validateRelationships()
+  }
+  ```
+
+#### Helpers
+- `Formatters.swift`
+  ```swift 
+  // TODO-Kommentar entfernt
+  // MARK: - View Components
+  ```
+- `ImportAnalyzer.swift`
+  ```swift
+  // Abschließende Leerzeile ergänzt
+  ```
+
+### 📊 Statistik
+- **Geprüfte Dateien:** 7
+- **Behobene Warnungen:** 12
+- **Kritische Fehler:** 0
+
+### 💡 Best Practices
+1. SwiftLint-Checks vor jedem Commit
+2. Integration in Build-Pipeline
+3. Regelmäßige Code Reviews
+
+## 🛠 Terminal Befehle
+```bash
+cd "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0"
+swiftlint lint
+```
+
+### 🔄 CI/CD Integration
+```yaml
+// filepath: .github/workflows/swiftlint.yml
+name: SwiftLint
+on: [push, pull_request]
+jobs:
+  lint:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run SwiftLint
+        run: swiftlint lint --strict
+```
 
 ## 📋 TÄGLICHE CHECKLISTE
 1. **Projekt-Analyse**

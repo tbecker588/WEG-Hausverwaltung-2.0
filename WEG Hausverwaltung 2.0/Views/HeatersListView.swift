@@ -1,147 +1,99 @@
-import SwiftUI
-import CoreData
+/**
+ * @file    HeatersListView.swift
+ * @brief   Listenansicht aller Heizkörper
+ * @author  Thomas Becker
+ * @date    09.04.2024
+ */
 
+import CoreData
+import SwiftUI
+
+// MARK: - HeatersListView
+
+/// Hauptansicht zur Verwaltung und Anzeige aller Heizkörper
 struct HeatersListView: View {
-    @Environment(\.managedObjectContext) private var context
+    // MARK: - Properties
+
+    /// Core Data Kontext für Datenbankoperationen
+    @Environment(\.managedObjectContext)
+    private var viewContext
+
+    /// Steuert die Anzeige des Dialogs zum Hinzufügen eines Heizkörpers
+    @State
+    private var showingAddHeater = false
+
+    /// Abfrage aller Heizkörper, sortiert nach Raum
     @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Heater.heaterIdentifier, ascending: true)],
-        animation: .default)
-    private var heaters: FetchedResults<Heater>
-    
-    @State private var showingAddHeaterSheet = false
-    @State private var searchText = ""
-    
+        entity: WEG_Hausverwaltung_2_0.Heater.entity(),
+        sortDescriptors: [
+            NSSortDescriptor(keyPath: \WEG_Hausverwaltung_2_0.Heater.room, ascending: true),
+        ]
+    )
+    private var heaters: FetchedResults<WEG_Hausverwaltung_2_0.Heater>
+
+    // MARK: - Body
+
     var body: some View {
         List {
-            ForEach(filteredHeaters, id: \.id) { heater in
+            ForEach(heaters) { heater in
                 NavigationLink(destination: MeterReadingDetailView(heater: heater)) {
-                    HStack(spacing: 15) {
-                        Image(systemName: "thermometer")
-                            .foregroundColor(.red)
-                            .font(.title2)
-                        
-                        VStack(alignment: .leading) {
-                            Text("\(heater.heaterIdentifier ?? "Unbekannt")")
-                                .font(.headline)
-                            
-                            Text(heater.room)
-                                .font(.subheadline)
-                                .foregroundColor(.secondary)
-                            
-                            Text("Letzte Ablesung: \(heater.lastReading)")
-                                .font(.caption)
-                                .foregroundColor(.secondary)
-                        }
-                    }
-                    .padding(.vertical, 4)
+                    HeaterRowView(heater: heater)
                 }
             }
             .onDelete(perform: deleteHeaters)
         }
-        .navigationTitle("Heizkostenverteiler")
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
-                Button(action: { showingAddHeaterSheet = true }) {
-                    Label("Hinzufügen", systemImage: "plus")
+                Button(action: { showingAddHeater = true }) {
+                    Label("Heizkörper hinzufügen", systemImage: "plus")
                 }
             }
         }
-        .searchable(text: $searchText, prompt: "Nach Heizkörper suchen")
-        .sheet(isPresented: $showingAddHeaterSheet) {
-            AddHeaterView()
-        }
+        .navigationTitle("Heizkörper")
     }
-    
-    private var filteredHeaters: [Heater] {
-        if searchText.isEmpty {
-            return Array(heaters)
-        } else {
-            return heaters.filter { heater in
-                return (heater.heaterIdentifier?.lowercased().contains(searchText.lowercased()) ?? false) ||
-                      heater.room.lowercased().contains(searchText.lowercased())
-            }
-        }
-    }
-    
+
+    // MARK: - Helper Methods
+
+    /// Löscht die ausgewählten Heizkörper aus der Datenbank
+    /// - Parameter offsets: Die Indizes der zu löschenden Heizkörper
     private func deleteHeaters(offsets: IndexSet) {
         withAnimation {
-            offsets.map { filteredHeaters[$0] }.forEach(context.delete)
-            
+            offsets.map { heaters[$0] }.forEach(viewContext.delete)
             do {
-                try context.save()
+                try viewContext.save()
             } catch {
-                print("Fehler beim Löschen: \(error)")
+                print("Fehler beim Löschen: \(error.localizedDescription)")
             }
         }
     }
 }
 
-struct AddHeaterView: View {
-    @Environment(\.managedObjectContext) private var context
-    @Environment(\.presentationMode) var presentationMode
-    
-    @State private var identifier = ""
-    @State private var room = ""
-    @State private var currentReading = ""
-    @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \Owner.lastName, ascending: true)])
-    private var owners: FetchedResults<Owner>
-    @State private var selectedOwner: Owner?
-    
+// MARK: - HeaterRowView
+
+/// Einzelne Zeile in der Heizkörperliste
+private struct HeaterRowView: View {
+    /// Der anzuzeigende Heizkörper
+    let heater: WEG_Hausverwaltung_2_0.Heater
+
     var body: some View {
-        NavigationStack {
-            Form {
-                Section(header: Text("Heizkostenverteiler")) {
-                    TextField("Kennnummer", text: $identifier)
-                    TextField("Raum", text: $room)
-                    TextField("Aktueller Zählerstand", text: $currentReading)
-                        .keyboardType(.decimalPad)
-                }
-                
-                Section(header: Text("Zuordnung")) {
-                    Picker("Eigentümer", selection: $selectedOwner) {
-                        Text("Bitte wählen").tag(nil as Owner?)
-                        ForEach(owners) { owner in
-                            Text("\(owner.firstName) \(owner.lastName)").tag(owner as Owner?)
-                        }
-                    }
-                }
-                
-                Button("Speichern") {
-                    saveHeater()
-                }
-                .disabled(identifier.isEmpty || room.isEmpty || selectedOwner == nil)
-            }
-            .navigationTitle("Neuer Heizkostenverteiler")
-            .navigationBarItems(leading: Button("Abbrechen") {
-                presentationMode.wrappedValue.dismiss()
-            })
-        }
-    }
-    
-    private func saveHeater() {
-        guard let owner = selectedOwner, !identifier.isEmpty, !room.isEmpty else { return }
-        
-        let heater = Heater(context: context)
-        heater.id = UUID()
-        heater.heaterIdentifier = identifier  // Korrektur: konsistente Property-Bezeichnung
-        heater.room = room
-        heater.lastReading = currentReading.isEmpty ? "0" : currentReading
-        heater.owner = owner
-        
-        do {
-            try context.save()
-            presentationMode.wrappedValue.dismiss()
-        } catch {
-            print("Fehler beim Speichern: \(error)")
-        }
-    }
-}
+        VStack(alignment: .leading, spacing: DesignSystem.Spacing.small) {
+            Text(heater.room ?? "")
+                .font(.headline)
+                .accessibilityLabel("Raum: \(heater.room ?? "")")
 
-struct HeatersListView_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationStack {
-            HeatersListView()
-                .environment(\.managedObjectContext, CoreDataStack.preview.context)
+            if let lastReading = heater.lastReading {
+                Text("Letzte Ablesung: \(lastReading)")
+                    .font(.subheadline)
+                    .accessibilityLabel("Letzte Ablesung: \(lastReading)")
+            }
+
+            if let owner = heater.owner {
+                Text(owner.fullName)
+                    .font(.caption)
+                    .foregroundColor(.secondary)
+                    .accessibilityLabel("Eigentümer: \(owner.fullName)")
+            }
         }
+        .padding(.vertical, DesignSystem.Spacing.small)
     }
 }

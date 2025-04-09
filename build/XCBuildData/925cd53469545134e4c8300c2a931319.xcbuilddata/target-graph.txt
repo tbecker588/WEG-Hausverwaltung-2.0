@@ -1,0 +1,2 @@
+Target dependency graph (1 target)
+Target 'WEG Hausverwaltung 2.0' in project 'WEG Hausverwaltung 2.0' (no dependencies)

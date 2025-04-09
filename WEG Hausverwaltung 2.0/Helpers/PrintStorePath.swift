@@ -7,29 +7,29 @@ enum StorePathUtility {
     enum StoreError: LocalizedError {
         case loadError(String)
         case noStoreFound
-        
+
         var errorDescription: String? {
             switch self {
-            case .loadError(let message):
-                return "Fehler beim Laden des Stores: \(message)"
+            case let .loadError(message):
+                "Fehler beim Laden des Stores: \(message)"
             case .noStoreFound:
-                return "Kein Store gefunden"
+                "Kein Store gefunden"
             }
         }
     }
-    
+
     /// Gibt den Pfad zum CoreData Store zurück
     /// - Returns: Store-Pfad oder Fehler
     static func getStorePath() async throws -> String {
-        return try await withCheckedThrowingContinuation { continuation in
+        try await withCheckedThrowingContinuation { continuation in
             let container = NSPersistentContainer(name: "WEGHausverwaltung_2_0")
-            
+
             container.loadPersistentStores { description, error in
-                if let error = error {
+                if let error {
                     continuation.resume(throwing: StoreError.loadError(error.localizedDescription))
                     return
                 }
-                
+
                 if let path = description.url?.path {
                     continuation.resume(returning: path)
                 } else {
@@ -38,7 +38,7 @@ enum StorePathUtility {
             }
         }
     }
-    
+
     /// Druckt den Store-Pfad in der Konsole aus
     static func printStorePath() {
         Task {
@@ -51,7 +51,7 @@ enum StorePathUtility {
             }
         }
     }
-    
+
     /// Überprüft, ob der Store existiert
     /// - Returns: Bool und optional den Pfad
     static func validateStore() async -> (exists: Bool, path: String?) {

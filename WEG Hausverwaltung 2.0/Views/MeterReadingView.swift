@@ -1,18 +1,22 @@
-import SwiftUI
 import CoreData
+import SwiftUI
 
 struct MeterReadingView: View {
-    @ObservedObject var heater: Heater
-    @Environment(\.managedObjectContext) private var context
-    @State private var currentValue = ""
-    @Environment(\.presentationMode) var presentationMode
-    
+    @ObservedObject
+    var heater: Heater
+    @Environment(\.managedObjectContext)
+    private var context
+    @State
+    private var currentValue = ""
+    @Environment(\.presentationMode)
+    var presentationMode
+
     var formattedDate: String {
         let formatter = DateFormatter()
         formatter.dateStyle = .short
         return formatter.string(from: Date())
     }
-    
+
     var body: some View {
         Form {
             Section(
@@ -33,7 +37,7 @@ struct MeterReadingView: View {
                 }
                 .foregroundColor(Color.primaryBlue)
             }
-            
+
             Section {
                 Button("Speichern", action: saveReading)
                     .frame(maxWidth: .infinity)
@@ -45,17 +49,17 @@ struct MeterReadingView: View {
         .scrollContentBackground(.hidden)
         .background(DesignSystem.Colors.background)
     }
-    
+
     private func saveReading() {
         guard let value = Double(currentValue) else { return }
-        
+
         let reading = MeterReading(context: context)
         reading.id = UUID()
         reading.date = Date()
         reading.previousValue = Double(heater.lastReading) ?? 0
         reading.currentValue = value
         reading.heater = heater
-        
+
         do {
             try context.save()
             presentationMode.wrappedValue.dismiss()

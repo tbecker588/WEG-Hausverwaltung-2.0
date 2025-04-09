@@ -1,7 +1,7 @@
 import SwiftUI
 
 /// Eine wiederverwendbare Komponente für Einstellungseinträge
-/// 
+///
 /// Verwendung:
 /// ```swift
 /// SettingsSectionView(
@@ -12,21 +12,21 @@ import SwiftUI
 /// ```
 struct SettingsSectionView: View {
     // MARK: - Properties
-    
+
     /// Der angezeigte Titel
     let title: String
-    
+
     /// SF Symbol Name für das Icon
     let icon: String
-    
+
     /// Farbe des Icons (Standard: primary)
     let color: Color
-    
+
     /// Zielview für die Navigation
     let destination: AnyView
-    
+
     // MARK: - Initialization
-    
+
     init(
         title: String,
         icon: String,
@@ -38,9 +38,9 @@ struct SettingsSectionView: View {
         self.color = color
         self.destination = destination
     }
-    
+
     // MARK: - Body
-    
+
     var body: some View {
         NavigationLink(destination: destination) {
             HStack(spacing: DesignSystem.Spacing.small) {
@@ -48,7 +48,7 @@ struct SettingsSectionView: View {
                     .foregroundColor(color)
                     .frame(width: 24)
                     .accessibilityHidden(true)
-                
+
                 Text(title)
                     .foregroundColor(DesignSystem.Colors.text)
             }
@@ -61,6 +61,7 @@ struct SettingsSectionView: View {
 }
 
 // MARK: - Previews
+
 struct SettingsSectionView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
@@ -72,14 +73,14 @@ struct SettingsSectionView_Previews: PreviewProvider {
                         icon: "gear",
                         destination: AnyView(Text("Einstellungen"))
                     )
-                    
+
                     SettingsSectionView(
                         title: "Benachrichtigungen",
                         icon: "bell.badge",
                         color: .red,
                         destination: AnyView(Text("Benachrichtigungen"))
                     )
-                    
+
                     SettingsSectionView(
                         title: "Sicherheit",
                         icon: "lock.shield",
@@ -89,7 +90,7 @@ struct SettingsSectionView_Previews: PreviewProvider {
                 }
             }
             .previewDisplayName("Light Mode")
-            
+
             // Dunkler Modus
             NavigationStack {
                 List {

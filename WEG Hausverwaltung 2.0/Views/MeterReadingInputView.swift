@@ -1,18 +1,22 @@
 import SwiftUI
 
 struct MeterReadingInputView: View {
-    @State private var readingValue: String = ""
-    @State private var showingNumpad = false
-    @State private var selectedMeterType: MeterType = .water
-    @State private var readingDate = Date()
-    
+    @State
+    private var readingValue: String = ""
+    @State
+    private var showingNumpad = false
+    @State
+    private var selectedMeterType: MeterType = .water
+    @State
+    private var readingDate = Date()
+
     enum MeterType: String, CaseIterable {
         case water = "Wasser"
         case heating = "Heizung"
         case electricity = "Strom"
         case gas = "Gas"
     }
-    
+
     var body: some View {
         Form {
             Section(header: Text("Zählerstand erfassen")) {
@@ -22,9 +26,9 @@ struct MeterReadingInputView: View {
                     }
                 }
                 .pickerStyle(SegmentedPickerStyle())
-                
+
                 DatePicker("Ablesedatum", selection: $readingDate, displayedComponents: .date)
-                
+
                 Button(action: {
                     showingNumpad = true
                 }) {
@@ -36,7 +40,7 @@ struct MeterReadingInputView: View {
                     }
                 }
             }
-            
+
             if !readingValue.isEmpty {
                 Section {
                     Button("Speichern") {
@@ -58,9 +62,9 @@ struct MeterReadingInputView: View {
                     }
                 }
                 .padding()
-                
+
                 Divider()
-                
+
                 UniversalNumpad(value: $readingValue) {
                     showingNumpad = false
                 }
@@ -71,12 +75,12 @@ struct MeterReadingInputView: View {
             .padding()
         }
     }
-    
+
     private func saveReading() {
         // Hier würden wir den Zählerstand in der Datenbank speichern
         // Beispiel:
         print("Zählerstand gespeichert: \(selectedMeterType.rawValue) = \(readingValue) am \(readingDate)")
-        
+
         // Zurücksetzen der Eingabe
         readingValue = ""
     }

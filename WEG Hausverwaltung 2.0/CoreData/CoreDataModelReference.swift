@@ -8,7 +8,7 @@ final class CoreDataModelReference {
     
     lazy var container: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "WEG_Hausverwaltung_2_0")
-        container.loadPersistentStores { description, error in
+        container.loadPersistentStores { _, error in
             if let error = error {
                 fatalError("CoreData Fehler: \(error.localizedDescription)")
             }

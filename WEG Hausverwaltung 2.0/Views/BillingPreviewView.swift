@@ -1,18 +1,22 @@
-import SwiftUI
 import CoreData
+import SwiftUI
 
 struct BillingPreviewView: View {
     // CoreData-Kontext und Fetching-Eigenschaften
-    @Environment(\.managedObjectContext) private var context
+    @Environment(\.managedObjectContext)
+    private var context
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \AnnualBilling.year, ascending: false)],
-        animation: .default)
+        animation: .default
+    )
     private var annualBillings: FetchedResults<AnnualBilling>
-    
+
     // Ausgewählte Abrechnung
-    @State private var selectedBilling: AnnualBilling?
-    @State private var selectedOwner: Owner?
-    
+    @State
+    private var selectedBilling: AnnualBilling?
+    @State
+    private var selectedOwner: Owner?
+
     var body: some View {
         VStack {
             // Jahresauswahl
@@ -25,12 +29,12 @@ struct BillingPreviewView: View {
                 .pickerStyle(SegmentedPickerStyle())
                 .padding()
             }
-            
+
             // Eigentümerauswahl
             if let billing = selectedBilling {
                 ownerSelectionView(for: billing)
             }
-            
+
             // Abrechnungsdetails
             if let owner = selectedOwner, let billing = selectedBilling {
                 billingDetailsView(for: owner, in: billing)
@@ -42,7 +46,7 @@ struct BillingPreviewView: View {
             selectedBilling = annualBillings.first
         }
     }
-    
+
     // Eigentümer-Auswahlansicht
     private func ownerSelectionView(for billing: AnnualBilling) -> some View {
         VStack {
@@ -55,14 +59,14 @@ struct BillingPreviewView: View {
             .padding()
         }
     }
-    
+
     // Abrechnungsdetails-Ansicht
     private func billingDetailsView(for owner: Owner, in billing: AnnualBilling) -> some View {
         // Hole die spezifische Wohnungsabrechnung
         guard let apartmentBilling = fetchApartmentBilling(for: owner, in: billing) else {
             return AnyView(Text("Keine Abrechnung gefunden"))
         }
-        
+
         return AnyView(
             Form {
                 // Wasserdaten
@@ -73,7 +77,7 @@ struct BillingPreviewView: View {
                         cost: apartmentBilling.waterCost
                     )
                 }
-                
+
                 // Gasdaten
                 Section(header: Text("Gas")) {
                     DetailRow(
@@ -82,7 +86,7 @@ struct BillingPreviewView: View {
                         cost: apartmentBilling.gasCost
                     )
                 }
-                
+
                 // Heizung
                 Section(header: Text("Heizung")) {
                     DetailRow(
@@ -91,7 +95,7 @@ struct BillingPreviewView: View {
                         cost: apartmentBilling.heatingCost
                     )
                 }
-                
+
                 // Wohngeld und Saldo
                 Section(header: Text("Abrechnung")) {
                     HStack {
@@ -99,17 +103,18 @@ struct BillingPreviewView: View {
                         Spacer()
                         Text(String(format: "%.2f €", apartmentBilling.totalMonthlyFee * 12))
                     }
-                    
+
                     HStack {
                         Text("Gesamtkosten")
                         Spacer()
-                        Text(String(format: "%.2f €", 
-                            apartmentBilling.waterCost + 
-                            apartmentBilling.gasCost + 
-                            apartmentBilling.heatingCost
+                        Text(String(
+                            format: "%.2f €",
+                            apartmentBilling.waterCost +
+                                apartmentBilling.gasCost +
+                                apartmentBilling.heatingCost
                         ))
                     }
-                    
+
                     HStack {
                         Text("Saldo")
                         Spacer()
@@ -117,7 +122,7 @@ struct BillingPreviewView: View {
                             .foregroundColor(apartmentBilling.finalBalance >= 0 ? .green : .red)
                     }
                 }
-                
+
                 // Export-Optionen
                 Section {
                     Button("Als PDF exportieren") {
@@ -127,12 +132,12 @@ struct BillingPreviewView: View {
             }
         )
     }
-    
+
     // Hilfsfunktion zum Abrufen von Eigentümern
     private func fetchOwners(for billing: AnnualBilling) -> [Owner] {
         let request = NSFetchRequest<Owner>(entityName: "Owner")
         request.predicate = NSPredicate(format: "ANY apartmentBillings.annualBilling == %@", billing)
-        
+
         do {
             return try context.fetch(request)
         } catch {
@@ -140,13 +145,13 @@ struct BillingPreviewView: View {
             return []
         }
     }
-    
+
     // Hilfsfunktion zum Abrufen der Wohnungsabrechnung
     private func fetchApartmentBilling(for owner: Owner, in billing: AnnualBilling) -> ApartmentBilling? {
         let request = NSFetchRequest<ApartmentBilling>(entityName: "ApartmentBilling")
         request.predicate = NSPredicate(format: "owner == %@ AND annualBilling == %@", owner, billing)
         request.fetchLimit = 1
-        
+
         do {
             return try context.fetch(request).first
         } catch {
@@ -154,7 +159,7 @@ struct BillingPreviewView: View {
             return nil
         }
     }
-    
+
     // PDF-Export-Funktion
     private func exportPDF(for owner: Owner, in billing: AnnualBilling) {
         // TODO: Implementierung des PDF-Exports
@@ -168,7 +173,7 @@ struct DetailRow: View {
     let title: String
     let value: String
     let cost: Double
-    
+
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
@@ -177,9 +182,9 @@ struct DetailRow: View {
                     .font(.caption)
                     .foregroundColor(.secondary)
             }
-            
+
             Spacer()
-            
+
             Text(String(format: "%.2f €", cost))
         }
     }

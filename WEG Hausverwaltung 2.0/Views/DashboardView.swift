@@ -1,11 +1,11 @@
-import SwiftUI
 import CoreData
+import SwiftUI
 
 // Definition eines einfachen StatusBadge, falls nicht bereits separat vorhanden.
 struct StatusBadge: View {
     let text: String
     let color: Color
-    
+
     var body: some View {
         Text(text)
             .font(.caption2)
@@ -18,9 +18,11 @@ struct StatusBadge: View {
 }
 
 // MARK: - DashboardView
+
 struct DashboardView: View {
-    @Environment(\.managedObjectContext) private var viewContext
-    
+    @Environment(\.managedObjectContext)
+    private var viewContext
+
     var body: some View {
         NavigationView {
             List {
@@ -32,6 +34,7 @@ struct DashboardView: View {
 }
 
 // MARK: - Vorschau
+
 struct DashboardView_Previews: PreviewProvider {
     static var previews: some View {
         DashboardView()
@@ -40,26 +43,27 @@ struct DashboardView_Previews: PreviewProvider {
 }
 
 // MARK: - Hilfs-View für eine einzelne Kachel
+
 struct TileView: View {
     let title: String
     let systemImage: String
     let backgroundColor: Color
-    
+
     var body: some View {
         HStack(spacing: 12) {
             Image(systemName: systemImage)
                 .font(.title2)
                 .foregroundColor(.white)
-                .padding(8)  // Reduzierte Polsterung
-            
+                .padding(8) // Reduzierte Polsterung
+
             Text(title)
                 .font(.headline)
                 .foregroundColor(.white)
-            
+
             Spacer()
         }
         .padding(.horizontal, 8) // weniger seitliches Padding
-        .padding(.vertical, 10)  // weniger vertikales Padding
+        .padding(.vertical, 10) // weniger vertikales Padding
         .frame(maxWidth: .infinity)
         .background(backgroundColor)
         .cornerRadius(8)

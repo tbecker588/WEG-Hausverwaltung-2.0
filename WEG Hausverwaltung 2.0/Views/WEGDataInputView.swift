@@ -1,41 +1,62 @@
-import SwiftUI
 import CoreData
+import SwiftUI
 
 struct WEGDataInputView: View {
-    @Environment(\.managedObjectContext) private var context
-    @Environment(\.presentationMode) var presentationMode
-    
+    @Environment(\.managedObjectContext)
+    private var context
+    @Environment(\.presentationMode)
+    var presentationMode
+
     // Basis-WEG-Daten
-    @State private var name = ""
-    @State private var street = ""
-    @State private var houseNumber = ""
-    @State private var postalCode = ""
-    @State private var city = ""
-    
+    @State
+    private var name = ""
+    @State
+    private var street = ""
+    @State
+    private var houseNumber = ""
+    @State
+    private var postalCode = ""
+    @State
+    private var city = ""
+
     // Verwaltungsdaten
-    @State private var administrator = ""
-    @State private var contact = ""
-    @State private var email = ""
-    @State private var phone = ""
-    
+    @State
+    private var administrator = ""
+    @State
+    private var contact = ""
+    @State
+    private var email = ""
+    @State
+    private var phone = ""
+
     // Gebäudedaten
-    @State private var constructionYear = ""
-    @State private var apartmentCount = ""
-    @State private var totalArea = ""
-    
+    @State
+    private var constructionYear = ""
+    @State
+    private var apartmentCount = ""
+    @State
+    private var totalArea = ""
+
     // Status
-    @State private var showSaveAlert = false
-    
+    @State
+    private var showSaveAlert = false
+
     // MARK: - States für Validierung und Loading
-    @State private var validationErrors: [String] = []
-    @State private var showValidationAlert = false
-    @State private var isLoading = false
-    @State private var errorMessage: String?
-    
+
+    @State
+    private var validationErrors: [String] = []
+    @State
+    private var showValidationAlert = false
+    @State
+    private var isLoading = false
+    @State
+    private var errorMessage: String?
+
     // MARK: - Validierung
+
     private var isValid: Bool {
         validationErrors.removeAll()
-        
+
         if name.trimmingCharacters(in: .whitespaces).isEmpty {
             validationErrors.append("Name der WEG ist erforderlich")
         }
@@ -45,13 +66,13 @@ struct WEGDataInputView: View {
         if city.trimmingCharacters(in: .whitespaces).isEmpty {
             validationErrors.append("Stadt ist erforderlich")
         }
-        if !email.isEmpty && !email.contains("@") {
+        if !email.isEmpty, !email.contains("@") {
             validationErrors.append("E-Mail-Adresse ist ungültig")
         }
-        
+
         return validationErrors.isEmpty
     }
-    
+
     var body: some View {
         Form {
             // Basis-WEG-Daten
@@ -64,7 +85,7 @@ struct WEGDataInputView: View {
                     .keyboardType(.numberPad)
                 TextField("Ort", text: $city)
             }
-            
+
             // Verwaltungsdaten
             Section(header: Text("Verwaltung")) {
                 TextField("Verwaltername", text: $administrator)
@@ -76,7 +97,7 @@ struct WEGDataInputView: View {
                 TextField("Telefon", text: $phone)
                     .keyboardType(.phonePad)
             }
-            
+
             // Gebäudedaten
             Section(header: Text("Gebäudedaten")) {
                 TextField("Baujahr", text: $constructionYear)
@@ -86,7 +107,7 @@ struct WEGDataInputView: View {
                 TextField("Gesamtfläche (m²)", text: $totalArea)
                     .keyboardType(.decimalPad)
             }
-            
+
             // Speichern-Button
             Section {
                 Button(action: validateAndSave) {
@@ -97,7 +118,7 @@ struct WEGDataInputView: View {
                     }
                 }
                 .frame(maxWidth: .infinity)
-                .primaryButtonStyle()  // Neuer einheitlicher Style
+                .primaryButtonStyle() // Neuer einheitlicher Style
                 .disabled(!isValid || isLoading)
             }
             .listRowBackground(DesignSystem.Colors.List.rowBackground)
@@ -106,7 +127,7 @@ struct WEGDataInputView: View {
         .navigationBarTitleDisplayMode(.inline)
         .onAppear(perform: loadWEGData)
         .alert("Validierungsfehler", isPresented: $showValidationAlert) {
-            Button("OK", role: .cancel) { }
+            Button("OK", role: .cancel) {}
         } message: {
             Text(validationErrors.joined(separator: "\n"))
         }
@@ -118,11 +139,11 @@ struct WEGDataInputView: View {
             Text("Die WEG-Daten wurden erfolgreich gespeichert.")
         }
     }
-    
+
     private func loadWEGData() {
         // Laden der bestehenden WEG-Daten
         let request = NSFetchRequest<WEG>(entityName: "WEG")
-        
+
         do {
             let results = try context.fetch(request)
             if let weg = results.first {
@@ -143,41 +164,41 @@ struct WEGDataInputView: View {
             print("Fehler beim Laden der WEG-Daten: \(error)")
         }
     }
-    
+
     private func validateAndSave() {
         guard isValid else {
             showValidationAlert = true
             return
         }
-        
+
         isLoading = true
         Task {
             await saveWEGDataAsync()
             isLoading = false
         }
     }
-    
+
     private func saveWEGDataAsync() async {
         await MainActor.run {
             saveWEGData()
         }
     }
-    
+
     private func saveWEGData() {
         // Bestehende WEG-Daten suchen oder neu erstellen
         let request = NSFetchRequest<WEG>(entityName: "WEG")
-        
+
         do {
             let results = try context.fetch(request)
             let weg: WEG
-            
+
             if let existingWEG = results.first {
                 weg = existingWEG
             } else {
                 weg = WEG(context: context)
                 weg.id = UUID()
             }
-            
+
             // Daten aktualisieren
             weg.name = name
             weg.street = street
@@ -191,10 +212,10 @@ struct WEGDataInputView: View {
             weg.constructionYear = Int16(constructionYear) ?? 0
             weg.apartmentCount = Int16(apartmentCount) ?? 0
             weg.totalArea = Double(totalArea.replacingOccurrences(of: ",", with: ".")) ?? 0
-            
+
             try context.save()
             showSaveAlert = true
-            
+
         } catch {
             print("Fehler beim Speichern der WEG-Daten: \(error)")
         }
@@ -208,7 +229,7 @@ struct WEGDataInputView_Previews: PreviewProvider {
                 // Leeres Formular
                 WEGDataInputView()
                     .previewDisplayName("Neue WEG")
-                
+
                 // Vorausgefülltes Formular
                 WEGDataInputView()
                     .environment(\.managedObjectContext, createPreviewContext())
@@ -216,7 +237,7 @@ struct WEGDataInputView_Previews: PreviewProvider {
             }
         }
     }
-    
+
     private static func createPreviewContext() -> NSManagedObjectContext {
         let context = CoreDataStack.preview.context
         let weg = WEG(context: context)

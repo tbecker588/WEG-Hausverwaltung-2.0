@@ -1,14 +1,6 @@
-//
-//  WEG_Hausverwaltung_2_0UITestsLaunchTests.swift
-//  WEG Hausverwaltung 2.0UITests
-//
-//  Created by Thomas Becker on 06.04.25.
-//
-
 import XCTest
 
 final class WEG_Hausverwaltung_2_0UITestsLaunchTests: XCTestCase {
-
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true
     }

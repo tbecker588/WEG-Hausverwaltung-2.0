@@ -38,7 +38,7 @@
         <attribute name="waterCost" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="year" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="annualBilling" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AnnualBilling" inverseName="apartmentBilling" inverseEntity="AnnualBilling"/>
-        <relationship name="owner" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Owner" inverseName="apartmentBillings" inverseEntity="Owner"/>
+        <relationship name="owner" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Owner" inverseName="billings" inverseEntity="Owner"/>
     </entity>
     <entity name="DistributionSetting" representedClassName="DistributionSetting" syncable="YES" codeGenerationType="class">
         <attribute name="categoryName" optional="YES" attributeType="String"/>
@@ -69,14 +69,15 @@
     <entity name="Owner" representedClassName="Owner" parentEntity="ApartmentBilling" syncable="YES">
         <attribute name="apartmentNumber" optional="YES" attributeType="String"/>
         <attribute name="email" optional="YES" attributeType="String"/>
-        <attribute name="firstName" optional="YES" attributeType="String"/>
         <attribute name="floorNumber" optional="YES" attributeType="String"/>
-        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
-        <attribute name="lastName" optional="YES" attributeType="String"/>
         <attribute name="occupantCount" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="ownerIdentifier" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="ownershipShare" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="phoneNumber" optional="YES" attributeType="String"/>
-        <relationship name="apartmentBillings" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ApartmentBilling" inverseName="owner" inverseEntity="ApartmentBilling"/>
+        <attribute name="primitiveFirstName" optional="YES" attributeType="String"/>
+        <attribute name="primitiveID" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="primitiveLastName" optional="YES" attributeType="String"/>
+        <relationship name="billings" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ApartmentBilling" inverseName="owner" inverseEntity="ApartmentBilling"/>
         <relationship name="heaters" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Heater" inverseName="owner" inverseEntity="Heater"/>
         <relationship name="tenants" toMany="YES" deletionRule="Nullify" destinationEntity="Tenant" inverseName="owner" inverseEntity="Tenant"/>
     </entity>
@@ -91,6 +92,7 @@
         <relationship name="owner" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Owner" inverseName="tenants" inverseEntity="Owner"/>
     </entity>
     <entity name="WEG" representedClassName="WEG" syncable="YES" codeGenerationType="class">
+        <attribute name="administrator" optional="YES" attributeType="String"/>
         <attribute name="apartmentCount" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="city" optional="YES" attributeType="String"/>
         <attribute name="constructionYear" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>

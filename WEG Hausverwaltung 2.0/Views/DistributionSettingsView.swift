@@ -1,6 +1,6 @@
-import SwiftUI
-import Foundation
 import CoreData
+import Foundation
+import SwiftUI
 
 // Kategorien für Verteilungsschlüssel
 enum DistributionCategory: String, Codable, CaseIterable {
@@ -22,17 +22,19 @@ enum DistributionType: String, Codable, CaseIterable {
 extension DistributionSetting {
     static func loadSettings() -> [DistributionSetting] {
         // Implementation hier
-        return []
+        []
     }
 }
 
 struct DistributionSettingsView: View {
-    @Environment(\.managedObjectContext) private var viewContext
+    @Environment(\.managedObjectContext)
+    private var viewContext
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \DistributionSetting.name, ascending: true)],
-        animation: .default)
+        animation: .default
+    )
     private var settings: FetchedResults<DistributionSetting>
-    
+
     var body: some View {
         NavigationView {
             List {
@@ -47,7 +49,7 @@ struct DistributionSettingsView: View {
 
 struct SettingRow: View {
     let setting: DistributionSetting
-    
+
     var body: some View {
         HStack {
             Text(setting.name)

@@ -1,0 +1,10 @@
+project:
+  name: WEG Hausverwaltung 2.0
+  target: WEG Hausverwaltung 2.0
+  scheme: WEG Hausverwaltung 2.0
+  
+options:
+  retain-public: true
+  index-exclude-paths:
+    - Pods/
+    - Tests/

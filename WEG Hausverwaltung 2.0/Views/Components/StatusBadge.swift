@@ -3,7 +3,7 @@ import SwiftUI
 struct StatusBadge: View {
     let text: String
     let color: Color
-    
+
     var body: some View {
         Text(text)
             .font(.caption2)

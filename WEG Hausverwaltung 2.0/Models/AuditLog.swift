@@ -1,5 +1,5 @@
-import Foundation
 import CoreData
+import Foundation
 
 @objc(AuditLog)
 public class AuditLog: NSManagedObject {
@@ -10,59 +10,68 @@ public class AuditLog: NSManagedObject {
     }
 }
 
-extension AuditLog {
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<AuditLog> {
-        return NSFetchRequest<AuditLog>(entityName: "AuditLog")
+public extension AuditLog {
+    @nonobjc
+    class func fetchRequest() -> NSFetchRequest<AuditLog> {
+        NSFetchRequest<AuditLog>(entityName: "AuditLog")
     }
-    
-    @NSManaged public var id: UUID?
-    @NSManaged public var entityName: String
-    @NSManaged public var entityId: String
-    @NSManaged public var action: String
-    @NSManaged public var changedBy: String
-    @NSManaged public var oldValues: Data
-    @NSManaged public var newValues: Data
-    @NSManaged public var timestamp: Date
-    
+
+    @NSManaged
+    var id: UUID?
+    @NSManaged
+    var entityName: String
+    @NSManaged
+    var entityId: String
+    @NSManaged
+    var action: String
+    @NSManaged
+    var changedBy: String
+    @NSManaged
+    var oldValues: Data
+    @NSManaged
+    var newValues: Data
+    @NSManaged
+    var timestamp: Date
+
     // MARK: - Berechnete Eigenschaften
-    
-    var actionType: AuditAction? {
+
+    internal var actionType: AuditAction? {
         get { AuditAction(rawValue: action) }
         set { action = newValue?.rawValue ?? AuditAction.update.rawValue }
     }
-    
-    var formattedTimestamp: String {
+
+    internal var formattedTimestamp: String {
         let formatter = DateFormatter()
         formatter.dateStyle = .medium
         formatter.timeStyle = .medium
         formatter.locale = Locale(identifier: "de_DE")
         return formatter.string(from: timestamp)
     }
-    
+
     // MARK: - Hilfsmethoden
-    
-    func storeValues(_ dictionary: [String: Any], isOld: Bool) throws {
+
+    internal func storeValues(_ dictionary: [String: Any], isOld: Bool) throws {
         let data = try JSONSerialization.data(withJSONObject: dictionary)
         if isOld {
-            self.oldValues = data
+            oldValues = data
         } else {
-            self.newValues = data
+            newValues = data
         }
     }
-    
-    func retrieveValues(isOld: Bool) throws -> [String: Any] {
+
+    internal func retrieveValues(isOld: Bool) throws -> [String: Any] {
         let data = isOld ? oldValues : newValues
         guard let dict = try JSONSerialization.jsonObject(with: data) as? [String: Any] else {
             throw NSError(domain: "AuditLog", code: 1, userInfo: [
-                NSLocalizedDescriptionKey: "Ungültiges JSON-Format"
+                NSLocalizedDescriptionKey: "Ungültiges JSON-Format",
             ])
         }
         return dict
     }
-    
+
     // MARK: - Factory-Methoden
-    
-    static func createLog(
+
+    internal static func createLog(
         context: NSManagedObjectContext,
         entityName: String,
         entityId: String,
@@ -78,15 +87,16 @@ extension AuditLog {
         log.action = action.rawValue
         log.changedBy = changedBy
         log.timestamp = Date()
-        
+
         try log.storeValues(oldValues, isOld: true)
         try log.storeValues(newValues, isOld: false)
-        
+
         return log
     }
 }
 
 // MARK: - Preview Support
+
 extension AuditLog {
     static var example: AuditLog {
         let context = PersistenceController.preview.container.viewContext
@@ -97,13 +107,13 @@ extension AuditLog {
         log.action = AuditAction.update.rawValue
         log.changedBy = "System"
         log.timestamp = Date()
-        
+
         let oldValues = ["name": "Alt"]
         let newValues = ["name": "Neu"]
-        
+
         try? log.storeValues(oldValues, isOld: true)
         try? log.storeValues(newValues, isOld: false)
-        
+
         return log
     }
 }

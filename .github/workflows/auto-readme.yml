@@ -8,19 +8,26 @@ on:
 jobs:
   update-readme:
     runs-on: macos-latest
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v3
-      
+        with:
+          ref: main
+          
       - name: Update README
         run: |
           DATE=$(date '+%d.%m.%Y - %H:%M Uhr')
           echo "📝 README.md wird aktualisiert: $DATE"
-          sed -i '' "s/^## 📝 Änderungsprotokoll.*$/## 📝 Änderungsprotokoll (Letzte Aktualisierung: $DATE)/" README.md
-      
+          sed -i '' "s/^## 📝 Änderungsprotokoll.*$/## 📝 Änderungsprotokoll (Stand: $DATE)/" README.md
+          
+      - name: Git Konfiguration
+        run: |
+          git config --local user.email "tbecker588@gmail.com"
+          git config --local user.name "tbecker588"
+          
       - name: Commit & Push
         run: |
-          git config --local user.email "actions@github.com"
-          git config --local user.name "GitHub Actions"
           git add README.md
-          git commit -m "📝 Auto-Update: $DATE" || echo "Keine Änderungen"
-          git push
+          git commit -m "📝 Auto-Update: $DATE"
+          git push origin main

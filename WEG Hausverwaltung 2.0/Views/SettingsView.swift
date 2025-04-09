@@ -12,7 +12,7 @@ struct SettingsView: View {
                         Text("Daten der WEG")
                     }
                 }
-                
+
                 // Link zu Eigentümern
                 NavigationLink(destination: OwnerListView()) {
                     HStack {
@@ -21,7 +21,7 @@ struct SettingsView: View {
                         Text("Eigentümer verwalten")
                     }
                 }
-                
+
                 // Verteilungsschlüssel
                 NavigationLink(destination: DistributionSettingsView()) {
                     HStack {
@@ -31,7 +31,7 @@ struct SettingsView: View {
                     }
                 }
             }
-            
+
             // Abrechnungen
             Section(header: Text("Abrechnungen")) {
                 // Abrechnungen anzeigen
@@ -42,7 +42,7 @@ struct SettingsView: View {
                         Text("Abrechnungen anzeigen")
                     }
                 }
-                
+
                 // Jahresabrechnung erstellen
                 NavigationLink(destination: AnnualBillingInputView()) {
                     HStack {
@@ -51,7 +51,7 @@ struct SettingsView: View {
                         Text("Jahresabrechnung erstellen")
                     }
                 }
-                
+
                 // Vollständige Abrechnung
                 NavigationLink(destination: ComprehensiveBillingView()) {
                     HStack {
@@ -61,7 +61,7 @@ struct SettingsView: View {
                     }
                 }
             }
-            
+
             // Zählerstände
             Section(header: Text("Zähler & Messgeräte")) {
                 // Zählerstände erfassen
@@ -72,7 +72,7 @@ struct SettingsView: View {
                         Text("Zählerstände erfassen")
                     }
                 }
-                
+
                 // Heizkostenverteiler
                 NavigationLink(destination: HeatersListView()) {
                     HStack {

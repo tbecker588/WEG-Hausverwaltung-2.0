@@ -1,0 +1,69 @@
+import SwiftUI
+
+extension Color {
+    // MARK: - App-Hauptfarben
+    static let primaryBlue = Color(red: 0/255, green: 122/255, blue: 255/255) // iOS Blauton
+    
+    // MARK: - Sekundäre Farben
+    static let secondaryMint = Color(red: 0.4, green: 0.8, blue: 0.7)
+    static let secondaryGray = Color(red: 0.9, green: 0.9, blue: 0.9)
+    
+    // MARK: - Hintergrundfarben
+    static let backgroundGray = Color(UIColor.systemGroupedBackground)
+    static let cardWhite = Color.white
+    
+    // MARK: - App-Farben mit Asset-Namen (für die Verwendung mit Assets-Katalog)
+    // Diese können verwendet werden, wenn die Farben im Assets-Katalog definiert sind
+    static let appPrimaryBlue = Color("PrimaryBlue")
+    static let appSecondaryMint = Color("SecondaryMint")
+    static let appBackgroundGray = Color("BackgroundGray")
+    
+    // MARK: - Designsystem-Farben aus der Passwörter-App
+    static let passwordsBlue = Color(red: 0/255, green: 122/255, blue: 255/255)
+    static let passwordsGray = Color(.systemGroupedBackground)
+    static let passwordsCell = Color(.secondarySystemGroupedBackground)
+    
+    // MARK: - Semantische Farben
+    static let successGreen = Color.green
+    static let warningOrange = Color.orange
+    static let errorRed = Color.red
+    static let infoBlue = Color.blue
+}
+
+// MARK: - Button-Stil
+struct PrimaryButtonStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .frame(maxWidth: .infinity)
+            .padding()
+            .background(Color.primaryBlue)
+            .foregroundColor(.white)
+            .clipShape(RoundedRectangle(cornerRadius: 10))
+            .scaleEffect(configuration.isPressed ? 0.98 : 1)
+    }
+}
+
+struct SecondaryButtonStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .frame(maxWidth: .infinity)
+            .padding()
+            .background(Color.secondaryGray)
+            .foregroundColor(.primaryBlue)
+            .clipShape(RoundedRectangle(cornerRadius: 10))
+            .scaleEffect(configuration.isPressed ? 0.98 : 1)
+    }
+}
+
+// MARK: - Passwörter-App-Stil
+struct PasswordsButtonStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .frame(maxWidth: .infinity)
+            .padding()
+            .background(Color.passwordsBlue)
+            .foregroundColor(.white)
+            .clipShape(RoundedRectangle(cornerRadius: 10))
+            .scaleEffect(configuration.isPressed ? 0.98 : 1)
+    }
+}

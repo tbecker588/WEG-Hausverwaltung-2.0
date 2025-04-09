@@ -4,17 +4,22 @@ import SwiftUI
 /// Stellt die primäre Navigation über TabView zur Verfügung
 struct MainView: View {
     // MARK: - Properties
-    @State private var selection = 0
-    @Environment(\.horizontalSizeClass) var sizeClass
-    
+
+    @State
+    private var selection = 0
+    @Environment(\.horizontalSizeClass)
+    var sizeClass
+
     // MARK: - Tab Definitionen
+
     private let tabs = [
         Tab(title: "Dashboard", image: "house", tag: 0),
         Tab(title: "Abrechnung", image: "list.bullet.rectangle", tag: 1),
-        Tab(title: "Einstellungen", image: "gear", tag: 2)
+        Tab(title: "Einstellungen", image: "gear", tag: 2),
     ]
-    
+
     // MARK: - Body
+
     var body: some View {
         TabView(selection: $selection) {
             NavigationView {
@@ -24,7 +29,7 @@ struct MainView: View {
                 Label("Dashboard", systemImage: "house")
             }
             .tag(0)
-            
+
             NavigationView {
                 BillingView()
             }
@@ -32,7 +37,7 @@ struct MainView: View {
                 Label("Abrechnung", systemImage: "list.bullet.rectangle")
             }
             .tag(1)
-            
+
             NavigationView {
                 SettingsView()
             }
@@ -48,6 +53,7 @@ struct MainView: View {
 }
 
 // MARK: - Hilfsstrukturen
+
 private struct Tab: Identifiable {
     let id = UUID()
     let title: String
@@ -56,12 +62,13 @@ private struct Tab: Identifiable {
 }
 
 // MARK: - Preview
+
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             MainView()
                 .previewDisplayName("Light Mode")
-            
+
             MainView()
                 .preferredColorScheme(.dark)
                 .previewDisplayName("Dark Mode")

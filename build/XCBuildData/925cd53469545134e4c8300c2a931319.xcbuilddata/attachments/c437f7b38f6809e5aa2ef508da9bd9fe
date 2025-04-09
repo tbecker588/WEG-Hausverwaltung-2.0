@@ -1,0 +1,370 @@
+{
+  "" : {
+    "const-values" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/WEG Hausverwaltung 2.0-master.swiftconstvalues",
+    "dependencies" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/WEG Hausverwaltung 2.0-master.d",
+    "diagnostics" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/WEG Hausverwaltung 2.0-master.dia",
+    "emit-module-dependencies" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/WEG Hausverwaltung 2.0-master-emit-module.d",
+    "emit-module-diagnostics" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/WEG Hausverwaltung 2.0-master-emit-module.dia",
+    "swift-dependencies" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/WEG Hausverwaltung 2.0-master.swiftdeps"
+  },
+  "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/WEG Hausverwaltung 2.0/Components/ConsumptionOverviewCard.swift" : {
+    "index-unit-output-path" : "/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/ConsumptionOverviewCard.o",
+    "llvm-bc" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/ConsumptionOverviewCard.bc",
+    "object" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/ConsumptionOverviewCard.o"
+  },
+  "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/WEG Hausverwaltung 2.0/Components/InfoRow.swift" : {
+    "index-unit-output-path" : "/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/InfoRow.o",
+    "llvm-bc" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/InfoRow.bc",
+    "object" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/InfoRow.o"
+  },
+  "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/WEG Hausverwaltung 2.0/Components/SignaturePadView.swift" : {
+    "index-unit-output-path" : "/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/SignaturePadView.o",
+    "llvm-bc" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/SignaturePadView.bc",
+    "object" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/SignaturePadView.o"
+  },
+  "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/WEG Hausverwaltung 2.0/Components/UniversalNumpad.swift" : {
+    "index-unit-output-path" : "/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/UniversalNumpad.o",
+    "llvm-bc" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/UniversalNumpad.bc",
+    "object" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/UniversalNumpad.o"
+  },
+  "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/WEG Hausverwaltung 2.0/ContentView.swift" : {
+    "index-unit-output-path" : "/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/ContentView.o",
+    "llvm-bc" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/ContentView.bc",
+    "object" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/ContentView.o"
+  },
+  "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/WEG Hausverwaltung 2.0/CoreData/CoreDataModelReference.swift" : {
+    "index-unit-output-path" : "/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/CoreDataModelReference.o",
+    "llvm-bc" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/CoreDataModelReference.bc",
+    "object" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/CoreDataModelReference.o"
+  },
+  "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/WEG Hausverwaltung 2.0/CoreData/CoreDataModelValidator.swift" : {
+    "index-unit-output-path" : "/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/CoreDataModelValidator.o",
+    "llvm-bc" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/CoreDataModelValidator.bc",
+    "object" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/CoreDataModelValidator.o"
+  },
+  "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/WEG Hausverwaltung 2.0/CoreData/CoreDataModels.swift" : {
+    "index-unit-output-path" : "/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/CoreDataModels.o",
+    "llvm-bc" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/CoreDataModels.bc",
+    "object" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/CoreDataModels.o"
+  },
+  "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/WEG Hausverwaltung 2.0/CoreData/CoreDataStack.swift" : {
+    "index-unit-output-path" : "/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/CoreDataStack.o",
+    "llvm-bc" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/CoreDataStack.bc",
+    "object" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/CoreDataStack.o"
+  },
+  "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/WEG Hausverwaltung 2.0/Design/DesignSystem.swift" : {
+    "index-unit-output-path" : "/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/DesignSystem.o",
+    "llvm-bc" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/DesignSystem.bc",
+    "object" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/DesignSystem.o"
+  },
+  "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/WEG Hausverwaltung 2.0/Extensions/Color+Custom.swift" : {
+    "index-unit-output-path" : "/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/Color+Custom.o",
+    "llvm-bc" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/Color+Custom.bc",
+    "object" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/Color+Custom.o"
+  },
+  "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/WEG Hausverwaltung 2.0/Extensions/Font+Custom.swift" : {
+    "index-unit-output-path" : "/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/Font+Custom.o",
+    "llvm-bc" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/Font+Custom.bc",
+    "object" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/Font+Custom.o"
+  },
+  "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/WEG Hausverwaltung 2.0/Extensions/Owner+Extensions.swift" : {
+    "index-unit-output-path" : "/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/Owner+Extensions.o",
+    "llvm-bc" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/Owner+Extensions.bc",
+    "object" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/Owner+Extensions.o"
+  },
+  "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/WEG Hausverwaltung 2.0/Helpers/Formatters.swift" : {
+    "index-unit-output-path" : "/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/Formatters.o",
+    "llvm-bc" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/Formatters.bc",
+    "object" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/Formatters.o"
+  },
+  "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/WEG Hausverwaltung 2.0/Helpers/ImportAnalyzer.swift" : {
+    "index-unit-output-path" : "/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/ImportAnalyzer.o",
+    "llvm-bc" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/ImportAnalyzer.bc",
+    "object" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/ImportAnalyzer.o"
+  },
+  "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/WEG Hausverwaltung 2.0/Helpers/PrintStorePath.swift" : {
+    "index-unit-output-path" : "/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/PrintStorePath.o",
+    "llvm-bc" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/PrintStorePath.bc",
+    "object" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/PrintStorePath.o"
+  },
+  "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/WEG Hausverwaltung 2.0/Item.swift" : {
+    "index-unit-output-path" : "/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/Item.o",
+    "llvm-bc" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/Item.bc",
+    "object" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/Item.o"
+  },
+  "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/WEG Hausverwaltung 2.0/Models/AdditionalPayment.swift" : {
+    "index-unit-output-path" : "/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/AdditionalPayment.o",
+    "llvm-bc" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/AdditionalPayment.bc",
+    "object" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/AdditionalPayment.o"
+  },
+  "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/WEG Hausverwaltung 2.0/Models/AnnualBilling+Extensions.swift" : {
+    "index-unit-output-path" : "/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/AnnualBilling+Extensions.o",
+    "llvm-bc" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/AnnualBilling+Extensions.bc",
+    "object" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/AnnualBilling+Extensions.o"
+  },
+  "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/WEG Hausverwaltung 2.0/Models/ApartmentBilling+Extensions.swift" : {
+    "index-unit-output-path" : "/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/ApartmentBilling+Extensions.o",
+    "llvm-bc" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/ApartmentBilling+Extensions.bc",
+    "object" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/ApartmentBilling+Extensions.o"
+  },
+  "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/WEG Hausverwaltung 2.0/Models/AppModels.swift" : {
+    "index-unit-output-path" : "/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/AppModels.o",
+    "llvm-bc" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/AppModels.bc",
+    "object" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/AppModels.o"
+  },
+  "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/WEG Hausverwaltung 2.0/Models/AuditLog.swift" : {
+    "index-unit-output-path" : "/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/AuditLog.o",
+    "llvm-bc" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/AuditLog.bc",
+    "object" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/AuditLog.o"
+  },
+  "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/WEG Hausverwaltung 2.0/Models/Billing.swift" : {
+    "index-unit-output-path" : "/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/Billing.o",
+    "llvm-bc" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/Billing.bc",
+    "object" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/Billing.o"
+  },
+  "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/WEG Hausverwaltung 2.0/Models/BillingModels.swift" : {
+    "index-unit-output-path" : "/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/BillingModels.o",
+    "llvm-bc" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/BillingModels.bc",
+    "object" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/BillingModels.o"
+  },
+  "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/WEG Hausverwaltung 2.0/Models/DistributionKey.swift" : {
+    "index-unit-output-path" : "/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/DistributionKey.o",
+    "llvm-bc" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/DistributionKey.bc",
+    "object" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/DistributionKey.o"
+  },
+  "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/WEG Hausverwaltung 2.0/Models/Enums.swift" : {
+    "index-unit-output-path" : "/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/Enums.o",
+    "llvm-bc" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/Enums.bc",
+    "object" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/Enums.o"
+  },
+  "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/WEG Hausverwaltung 2.0/Models/Heater+Extensions.swift" : {
+    "index-unit-output-path" : "/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/Heater+Extensions.o",
+    "llvm-bc" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/Heater+Extensions.bc",
+    "object" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/Heater+Extensions.o"
+  },
+  "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/WEG Hausverwaltung 2.0/Models/Heater.swift" : {
+    "index-unit-output-path" : "/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/Heater.o",
+    "llvm-bc" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/Heater.bc",
+    "object" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/Heater.o"
+  },
+  "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/WEG Hausverwaltung 2.0/Models/MeterReading+Extensions.swift" : {
+    "index-unit-output-path" : "/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/MeterReading+Extensions.o",
+    "llvm-bc" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/MeterReading+Extensions.bc",
+    "object" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/MeterReading+Extensions.o"
+  },
+  "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/WEG Hausverwaltung 2.0/Models/Owner+CoreDataProperties.swift" : {
+    "index-unit-output-path" : "/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/Owner+CoreDataProperties.o",
+    "llvm-bc" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/Owner+CoreDataProperties.bc",
+    "object" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/Owner+CoreDataProperties.o"
+  },
+  "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/WEG Hausverwaltung 2.0/Models/Owner.swift" : {
+    "index-unit-output-path" : "/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/Owner.o",
+    "llvm-bc" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/Owner.bc",
+    "object" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/Owner.o"
+  },
+  "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/WEG Hausverwaltung 2.0/Models/Tenant.swift" : {
+    "index-unit-output-path" : "/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/Tenant.o",
+    "llvm-bc" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/Tenant.bc",
+    "object" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/Tenant.o"
+  },
+  "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/WEG Hausverwaltung 2.0/Models/TypeAliases.swift" : {
+    "index-unit-output-path" : "/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/TypeAliases.o",
+    "llvm-bc" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/TypeAliases.bc",
+    "object" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/TypeAliases.o"
+  },
+  "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/WEG Hausverwaltung 2.0/Models/WEG+Extensions.swift" : {
+    "index-unit-output-path" : "/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/WEG+Extensions.o",
+    "llvm-bc" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/WEG+Extensions.bc",
+    "object" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/WEG+Extensions.o"
+  },
+  "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/WEG Hausverwaltung 2.0/Persistence.swift" : {
+    "index-unit-output-path" : "/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/Persistence.o",
+    "llvm-bc" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/Persistence.bc",
+    "object" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/Persistence.o"
+  },
+  "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/WEG Hausverwaltung 2.0/Preview Content/PreviewData.swift" : {
+    "index-unit-output-path" : "/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/PreviewData.o",
+    "llvm-bc" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/PreviewData.bc",
+    "object" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/PreviewData.o"
+  },
+  "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/WEG Hausverwaltung 2.0/SceneDelegate.swift" : {
+    "index-unit-output-path" : "/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/SceneDelegate.o",
+    "llvm-bc" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/SceneDelegate.bc",
+    "object" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/SceneDelegate.o"
+  },
+  "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/WEG Hausverwaltung 2.0/Services/AuthService.swift" : {
+    "index-unit-output-path" : "/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/AuthService.o",
+    "llvm-bc" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/AuthService.bc",
+    "object" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/AuthService.o"
+  },
+  "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/WEG Hausverwaltung 2.0/Services/BillingCalculationService.swift" : {
+    "index-unit-output-path" : "/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/BillingCalculationService.o",
+    "llvm-bc" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/BillingCalculationService.bc",
+    "object" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/BillingCalculationService.o"
+  },
+  "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/WEG Hausverwaltung 2.0/Services/BillingService.swift" : {
+    "index-unit-output-path" : "/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/BillingService.o",
+    "llvm-bc" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/BillingService.bc",
+    "object" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/BillingService.o"
+  },
+  "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/WEG Hausverwaltung 2.0/Services/CalculationService.swift" : {
+    "index-unit-output-path" : "/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/CalculationService.o",
+    "llvm-bc" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/CalculationService.bc",
+    "object" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/CalculationService.o"
+  },
+  "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/WEG Hausverwaltung 2.0/Services/ExcelImportService.swift" : {
+    "index-unit-output-path" : "/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/ExcelImportService.o",
+    "llvm-bc" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/ExcelImportService.bc",
+    "object" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/ExcelImportService.o"
+  },
+  "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/WEG Hausverwaltung 2.0/Services/OwnerTransferService.swift" : {
+    "index-unit-output-path" : "/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/OwnerTransferService.o",
+    "llvm-bc" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/OwnerTransferService.bc",
+    "object" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/OwnerTransferService.o"
+  },
+  "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/WEG Hausverwaltung 2.0/Services/PDFService.swift" : {
+    "index-unit-output-path" : "/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/PDFService.o",
+    "llvm-bc" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/PDFService.bc",
+    "object" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/PDFService.o"
+  },
+  "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/WEG Hausverwaltung 2.0/Utilities/PDFExporter.swift" : {
+    "index-unit-output-path" : "/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/PDFExporter.o",
+    "llvm-bc" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/PDFExporter.bc",
+    "object" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/PDFExporter.o"
+  },
+  "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/WEG Hausverwaltung 2.0/ViewModels/ContentViewModel.swift" : {
+    "index-unit-output-path" : "/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/ContentViewModel.o",
+    "llvm-bc" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/ContentViewModel.bc",
+    "object" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/ContentViewModel.o"
+  },
+  "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/WEG Hausverwaltung 2.0/Views/AdminView.swift" : {
+    "index-unit-output-path" : "/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/AdminView.o",
+    "llvm-bc" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/AdminView.bc",
+    "object" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/AdminView.o"
+  },
+  "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/WEG Hausverwaltung 2.0/Views/AnnualBillingInputView.swift" : {
+    "index-unit-output-path" : "/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/AnnualBillingInputView.o",
+    "llvm-bc" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/AnnualBillingInputView.bc",
+    "object" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/AnnualBillingInputView.o"
+  },
+  "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/WEG Hausverwaltung 2.0/Views/BillingDetailView.swift" : {
+    "index-unit-output-path" : "/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/BillingDetailView.o",
+    "llvm-bc" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/BillingDetailView.bc",
+    "object" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/BillingDetailView.o"
+  },
+  "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/WEG Hausverwaltung 2.0/Views/BillingPreviewView.swift" : {
+    "index-unit-output-path" : "/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/BillingPreviewView.o",
+    "llvm-bc" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/BillingPreviewView.bc",
+    "object" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/BillingPreviewView.o"
+  },
+  "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/WEG Hausverwaltung 2.0/Views/BillingView.swift" : {
+    "index-unit-output-path" : "/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/BillingView.o",
+    "llvm-bc" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/BillingView.bc",
+    "object" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/BillingView.o"
+  },
+  "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/WEG Hausverwaltung 2.0/Views/CardView.swift" : {
+    "index-unit-output-path" : "/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/CardView.o",
+    "llvm-bc" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/CardView.bc",
+    "object" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/CardView.o"
+  },
+  "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/WEG Hausverwaltung 2.0/Views/Components/SettingsSectionView.swift" : {
+    "index-unit-output-path" : "/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/SettingsSectionView.o",
+    "llvm-bc" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/SettingsSectionView.bc",
+    "object" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/SettingsSectionView.o"
+  },
+  "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/WEG Hausverwaltung 2.0/Views/Components/StatusBadge.swift" : {
+    "index-unit-output-path" : "/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/StatusBadge.o",
+    "llvm-bc" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/StatusBadge.bc",
+    "object" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/StatusBadge.o"
+  },
+  "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/WEG Hausverwaltung 2.0/Views/ComprehensiveBillingView.swift" : {
+    "index-unit-output-path" : "/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/ComprehensiveBillingView.o",
+    "llvm-bc" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/ComprehensiveBillingView.bc",
+    "object" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/ComprehensiveBillingView.o"
+  },
+  "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/WEG Hausverwaltung 2.0/Views/DashboardView.swift" : {
+    "index-unit-output-path" : "/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/DashboardView.o",
+    "llvm-bc" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/DashboardView.bc",
+    "object" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/DashboardView.o"
+  },
+  "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/WEG Hausverwaltung 2.0/Views/DistributionSettingsView.swift" : {
+    "index-unit-output-path" : "/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/DistributionSettingsView.o",
+    "llvm-bc" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/DistributionSettingsView.bc",
+    "object" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/DistributionSettingsView.o"
+  },
+  "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/WEG Hausverwaltung 2.0/Views/HeatersListView.swift" : {
+    "index-unit-output-path" : "/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/HeatersListView.o",
+    "llvm-bc" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/HeatersListView.bc",
+    "object" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/HeatersListView.o"
+  },
+  "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/WEG Hausverwaltung 2.0/Views/MainView.swift" : {
+    "index-unit-output-path" : "/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/MainView.o",
+    "llvm-bc" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/MainView.bc",
+    "object" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/MainView.o"
+  },
+  "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/WEG Hausverwaltung 2.0/Views/MeterReadingDetailView.swift" : {
+    "index-unit-output-path" : "/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/MeterReadingDetailView.o",
+    "llvm-bc" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/MeterReadingDetailView.bc",
+    "object" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/MeterReadingDetailView.o"
+  },
+  "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/WEG Hausverwaltung 2.0/Views/MeterReadingInputView.swift" : {
+    "index-unit-output-path" : "/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/MeterReadingInputView.o",
+    "llvm-bc" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/MeterReadingInputView.bc",
+    "object" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/MeterReadingInputView.o"
+  },
+  "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/WEG Hausverwaltung 2.0/Views/MeterReadingView.swift" : {
+    "index-unit-output-path" : "/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/MeterReadingView.o",
+    "llvm-bc" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/MeterReadingView.bc",
+    "object" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/MeterReadingView.o"
+  },
+  "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/WEG Hausverwaltung 2.0/Views/OwnerDetailView.swift" : {
+    "index-unit-output-path" : "/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/OwnerDetailView.o",
+    "llvm-bc" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/OwnerDetailView.bc",
+    "object" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/OwnerDetailView.o"
+  },
+  "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/WEG Hausverwaltung 2.0/Views/OwnerListView.swift" : {
+    "index-unit-output-path" : "/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/OwnerListView.o",
+    "llvm-bc" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/OwnerListView.bc",
+    "object" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/OwnerListView.o"
+  },
+  "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/WEG Hausverwaltung 2.0/Views/PasswordsStyleMainView.swift" : {
+    "index-unit-output-path" : "/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/PasswordsStyleMainView.o",
+    "llvm-bc" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/PasswordsStyleMainView.bc",
+    "object" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/PasswordsStyleMainView.o"
+  },
+  "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/WEG Hausverwaltung 2.0/Views/SecureActionView.swift" : {
+    "index-unit-output-path" : "/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/SecureActionView.o",
+    "llvm-bc" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/SecureActionView.bc",
+    "object" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/SecureActionView.o"
+  },
+  "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/WEG Hausverwaltung 2.0/Views/SettingsView.swift" : {
+    "index-unit-output-path" : "/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/SettingsView.o",
+    "llvm-bc" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/SettingsView.bc",
+    "object" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/SettingsView.o"
+  },
+  "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/WEG Hausverwaltung 2.0/Views/StatusBadgeView.swift" : {
+    "index-unit-output-path" : "/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/StatusBadgeView.o",
+    "llvm-bc" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/StatusBadgeView.bc",
+    "object" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/StatusBadgeView.o"
+  },
+  "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/WEG Hausverwaltung 2.0/Views/TenantDetailView.swift" : {
+    "index-unit-output-path" : "/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/TenantDetailView.o",
+    "llvm-bc" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/TenantDetailView.bc",
+    "object" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/TenantDetailView.o"
+  },
+  "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/WEG Hausverwaltung 2.0/Views/WEGDataInputView.swift" : {
+    "index-unit-output-path" : "/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/WEGDataInputView.o",
+    "llvm-bc" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/WEGDataInputView.bc",
+    "object" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/WEGDataInputView.o"
+  },
+  "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/WEG Hausverwaltung 2.0/WEG_Hausverwaltung_2_0App.swift" : {
+    "index-unit-output-path" : "/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/WEG_Hausverwaltung_2_0App.o",
+    "llvm-bc" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/WEG_Hausverwaltung_2_0App.bc",
+    "object" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/WEG_Hausverwaltung_2_0App.o"
+  },
+  "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/DerivedSources/GeneratedAssetSymbols.swift" : {
+    "index-unit-output-path" : "/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/GeneratedAssetSymbols.o",
+    "llvm-bc" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/GeneratedAssetSymbols.bc",
+    "object" : "/Users/thomasbecker/Desktop/XCode Projects/WEG Hausverwaltung 2.0/build/WEG Hausverwaltung 2.0.build/Release-iphoneos/WEG Hausverwaltung 2.0.build/Objects-normal/arm64/GeneratedAssetSymbols.o"
+  }
+}
